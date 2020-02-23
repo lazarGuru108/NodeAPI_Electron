@@ -1,0 +1,125 @@
+#admin {
+    .content {
+        margin: 24px 16px;
+        padding: 24px;
+        background: #fff;
+        min-height: 280px;
+    }
+}
+
+// ========== position/display styles===========
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.justify-content-right {
+  justify-content: flex-end;
+}
+
+// =========== antd customize ===================
+.ant-menu::before,
+.ant-menu::after {
+  display: table;
+  content: "";
+  width: 2px;
+  bottom: 0;
+  background: rgba(59, 70, 72, 0.5);
+  content: "";
+  // position: absolute;
+  top: 0;
+  left: 33px;
+}
+
+.breadcrumb > li + li:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+
+.breadcrumb > .active {
+  color: #37a000;
+  font-weight: 700;
+                
+}
+.ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+  padding: 4px 16px!important;
+  overflow-wrap: break-word;
+}
+
+.productTable .ant-table-placeholder {
+  display: none;
+}
+
+.anticon {
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: 0.125em!important;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ant-btn-primary {
+  border-color: rgba(0, 0, 0, 0)!important;
+}
+.ant-btn-primary:hover {
+  border-color: rgba(0, 0, 0, 0)!important;
+}
+
+// ========== margin styles =========
+.mr-6px {
+  margin-right: 6px;
+}
+.mr-3px {
+    margin-right: 3px;
+}
+
+
+// =========== color styles ========
+.btn-success.btn-outline {
+  color: #37a000;
+  background-color: transparent;
+}
+
+.btn-success {
+  background-color: #37a000;
+  border-color: #318d01;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.label-danger {
+  color: #fff;
+  background-color: #e5343d;
+  border: 2px solid #e5343d;
+}
+
+.bg-green {
+  background: #37a000 !important;
+}
+
+.text-success {
+    color: #37a000!important;
+}
+
+.color-green {
+    color: #37a000!important;
+}
+
+.panelHeader {
+  font-weight: bold;
+}
+
+.text-warning {
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+@import "./css/pe-icon-7-stroke.css";

@@ -1,0 +1,11 @@
+{
+    "HOME": "/",
+    "LOGIN": "/login",
+    "DASHBOARD": "/dashboard",
+    "SUPPLIER": "/Csupplier",
+    "MANAGESUPPLIER": "/Csupplier/manage_supplier",
+    "PURCHASE": "/purchase",
+    "PRODUCT": "/product",
+    "SALES": "/sales"
+  }
+  

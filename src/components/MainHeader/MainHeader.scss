@@ -1,0 +1,123 @@
+#header {
+  min-height: 60px;
+  border-bottom: 1px solid #e1e6ef;
+  .trigger {
+    font-size: 26px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .sidebar-toggle {
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    padding: 16px 14px;
+    font-family: fontAwesome;
+    border-right: 1px solid #e1e6ef;
+    color: #374767;
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+  .trigger:hover {
+    color: #1890ff;
+  }
+
+  .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+  }
+
+  .dashlogo {
+    background: rgb(36, 57, 80);
+    height: 64px;
+    display: block;
+    float: left;
+    height: 64px;
+    font-size: 20px;
+    line-height: 60px;
+    text-align: center;
+    width: 100%;
+    padding: 0 15px;
+    font-weight: 300;
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-size: 20px;
+    line-height: 60px;
+    text-align: center;
+    font-weight: 300;
+    color: #fff;
+  }
+
+  img.dashboard {
+    max-width: 55%;
+    max-height: auto;
+  }
+
+  .user-panel {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px 10px;
+  }
+
+  .user-panel .image img {
+    width: 100%;
+    max-width: 85px;
+    height: auto;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 5px;
+  }
+
+  .img-circle {
+    border-radius: 50%;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+  .info {
+    color: red;
+  }
+  /* header */
+  .logo {
+    width: 120px;
+    height: 31px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px 224px 16px 0;
+    float: left;
+  }
+  /**/
+
+  .setting {
+    font-size: 24px;
+    // line-height: 64px;
+    padding: 0px, 0px, 0px, 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+    a>i {
+      border: 1px solid #f2f2f2;
+      padding: 6px 3px;
+      width: 36px;
+      text-align: center;
+      color: #374767;
+      background-color: #f5f5f5;
+      height: 36px;
+      font-size: 25px;
+    }
+    .label {
+      border: 2px solid #fff;
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      line-height: 8px;
+      padding: 5px 6px;
+      border-radius: 50em;
+      height: 22px;
+      width: 22px;
+    }
+  }
+}

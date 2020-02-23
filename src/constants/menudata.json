@@ -1,0 +1,431 @@
+{
+    "menus": [
+        {
+            "title": "Dashboard",
+            "hasChild": false,
+            "icon": "dashboard",
+            "url": "DASHBOARD",
+            "children": []
+        },
+        {
+            "title": "Sale",
+            "hasChild": true,
+            "icon": "shopping",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "SALES",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "SALES",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "SALES",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "SALES",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Customer",
+            "hasChild": true,
+            "icon": "customer-service",
+            "children": [
+                {
+                    "title": "Add Customer",
+                    "url": "DASHBOARD",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Customer",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "Customer Ledger",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "Credit Customer",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "Paid Customer",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "Customer Advance",
+                    "url": "DASHBOARD",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Product",
+            "hasChild": true,
+            "icon": "shop",
+            "children": [
+                {
+                    "title": "Category",
+                    "url": "PRODUCT",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Unit",
+                    "url": "PRODUCT",
+                    "icon": null
+                },
+                {
+                    "title": "Add Product",
+                    "url": "PRODUCT",
+                    "icon": null
+                },
+                {
+                    "title": "Import product(CSV)",
+                    "url": "PRODUCT",
+                    "icon": null
+                },
+                {
+                    "title": "Manage Product",
+                    "url": "PRODUCT",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Supplier",
+            "hasChild": true,
+            "icon": "user",
+            "children": [
+                {
+                    "title": "AddSupplier",
+                    "url": "MANAGESUPPLIER",
+                    "icon": null
+                },
+                {
+                    "title": "Manage Supplier",
+                    "url": "MANAGESUPPLIER",
+                    "icon": null
+                },
+                {
+                    "title": "Supplier Ledger",
+                    "url": "MANAGESUPPLIER",
+                    "icon": null
+                },
+                {
+                    "title": "Supplier Advance",
+                    "url": "MANAGESUPPLIER",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Purchase",
+            "hasChild": true,
+            "icon": "shopping-cart",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "PURCHASE",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "PURCHASE",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "PURCHASE",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "PURCHASE",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Stock",
+            "hasChild": true,
+            "icon": "bar-chart",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "DASHBOARD",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "DASHBOARD",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Return",
+            "hasChild": true,
+            "icon": "pull-request",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "DASHBOARD",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "DASHBOARD",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Report",
+            "hasChild": true,
+            "icon": "book",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "DASHBOARD",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "DASHBOARD",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Accounts",
+            "hasChild": true,
+            "icon": "account-book",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "DASHBOARD",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "DASHBOARD",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Bank",
+            "hasChild": true,
+            "icon": "bank",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "DASHBOARD",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "DASHBOARD",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Tax",
+            "hasChild": true,
+            "icon": "money-collect",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "DASHBOARD",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "DASHBOARD",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Human Resource",
+            "hasChild": true,
+            "icon": "team",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "DASHBOARD",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "DASHBOARD",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Service",
+            "hasChild": true,
+            "icon": "transaction",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "DASHBOARD",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "DASHBOARD",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Commission",
+            "hasChild": true,
+            "icon": "appstore",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "DASHBOARD",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "DASHBOARD",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "DASHBOARD",
+                    "icon": null
+                }
+            ]
+        },
+        {
+            "title": "Settings",
+            "hasChild": true,
+            "icon": "setting",
+            "children": [
+                {
+                    "title": "New Sale",
+                    "url": "HOME",
+                    "icon": "shopping"
+                },
+                {
+                    "title": "Manage Sale",
+                    "url": "HOME",
+                    "icon": null
+                },
+                {
+                    "title": "POS Sale",
+                    "url": "HOME",
+                    "icon": null
+                },
+                {
+                    "title": "GUI POS",
+                    "url": "HOME",
+                    "icon": null
+                }
+            ]
+        }
+    ]
+}

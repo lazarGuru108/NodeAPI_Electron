@@ -1,0 +1,139 @@
+#purchase {
+  min-height: 100vh;
+
+  /**
+    Content
+    */
+  min-height: 100%;
+  .addBtn {
+    background: #327310;
+  }
+  .addBtn:hover {
+    background: #459e17;
+  }
+  .editForm {
+    padding-top: 10px;
+  }
+  .title {
+    text-align: right;
+    justify-content: center;
+    justify-items: flex-end;
+  }
+  label .required {
+    color: #f9264c;
+    font-style: normal;
+    margin-left: 3px;
+  }
+  .form-check-label .item {
+    margin-left: 40px;
+    padding: 0px 0 7px;
+  }
+  .form-check-label {
+    margin-left: 40px;
+    padding: 0px 0 5px;
+  }
+  .tableButton {
+    width: 60px;
+    height: 24px;
+  }
+  .tableButton:hover {
+    border-color: none;
+  }
+  .status {
+    border-radius: 20px;
+    background-color: #00a65a !important;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+  }
+
+  .below {
+    background: rgb(245, 245, 245);
+    .input-group {
+      position: relative;
+      display: table;
+      border-collapse: separate;
+    }
+
+    .input-group .input-group-addon {
+      border-radius: 0;
+      border-color: #d2d6de;
+      background-color: #f9f9f9;
+    }
+    .input-group-addon:first-child {
+      border-right: 0;
+    }
+    .paddinglr-10 {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .input-group-addon {
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1;
+      color: #555;
+      text-align: center;
+      background-color: #eee;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .input-group-addon,
+    .input-group-btn {
+      width: 1%;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+
+    .input-group .form-control,
+    .input-group-addon,
+    .input-group-btn {
+      display: table-cell;
+    }
+    .input-group .form-control {
+      position: relative;
+      z-index: 2;
+      float: left;
+      width: 100%;
+      margin-bottom: 0;
+    }
+    .input-lg {
+      height: 46px;
+      padding: 10px 16px;
+      font-size: 18px;
+      line-height: 1.3333333;
+    }
+    .productTable {
+      padding: 9px;
+    }
+    .firstCol {
+      width: 80%;
+      text-align: right;
+    }
+    .secondCol {
+      width: 15%;
+    }
+    .thirdCol {
+      width: 5%;
+    }
+  }
+  
+  .grayBack {
+    background: #d2d6de;
+  }
+  .blueBack {
+    background: #0073b7;
+  }
+  .greenBack {
+    background: #00a65a;
+  }
+  .redBack {
+    background: #dd4b39;
+  }
+  .yellowBack {
+    background: #f39c12;
+  }
+  /* tr {
+    line-height: 0.5px;
+  } */
+}

@@ -1,0 +1,67 @@
+{
+    "tables": [
+        {
+            "key": 0,
+            "id": 1,
+            "datetime": "2/11/2020",
+            "invoiceid": 1,
+            "supplier": "user1",
+            "creator" : "user1@gmail.com", 
+            "mobile": "1231231231", 
+            "amount": "gtin1",
+            "paidamount": "address1",
+            "due": "city1",
+            "status": "Active",
+            "state": "state1",
+            "country": "count1",
+            "storeSelect": true,
+            "stores": ["store 1", "store 2"],
+            "detail": "detail 1",
+            
+            "order": 4,
+            "product": "0"
+        },
+        {
+            "key": 1,
+            "id": 2,
+            "datetime": "1/23/2020",
+            "invoiceid": 2,
+            "supplier": "user21",
+            "creator" : "user21@gmail.com", 
+            "mobile": "3421124", 
+            "amount": "gtin2341",
+            "paidamount": "address341",
+            "due": "city21",
+            "status": "Active",
+            "state": "state1",
+            "country": "count1",
+            "storeSelect": true,
+            "stores": ["store 1", "store 2"],
+            "detail": "detail 1",
+            
+            "order": 4,
+            "product": "0"
+        },
+        {
+            "key": 2,
+            "id": 3,
+            "datetime": "2/25/2020",
+            "invoiceid": 3,
+            "supplier": "user31",
+            "creator" : "user31@gmail.com", 
+            "mobile": "4325322", 
+            "amount": "gtin311",
+            "paidamount": "address21",
+            "due": "city21",
+            "status": "inactive",
+            "state": "state1",
+            "country": "count1",
+            "storeSelect": true,
+            "stores": ["store 1", "store 2"],
+            "detail": "detail 1",
+            
+            "order": 4,
+            "product": "0"
+        }
+    ]
+}

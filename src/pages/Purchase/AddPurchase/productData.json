@@ -1,0 +1,31 @@
+{
+    "tables": [
+        {
+            "key": "0",
+            "product": "gerg-41129696",
+            "available": "17",
+            "quantity": "1",
+            "cost": "78",
+            "sellprice": "100",
+            "tax": "0"
+        },
+        {
+            "key": "1",
+            "product": "Goodday-g",
+            "available": "27",
+            "quantity": "1",
+            "cost": "20",
+            "sellprice": "100",
+            "tax": "4.68"
+        },
+        {
+            "key": "2",
+            "product": "Fact",
+            "available": "23",
+            "quantity": "2",
+            "cost": "48",
+            "sellprice": "130",
+            "tax": "2"
+        }
+    ]
+}

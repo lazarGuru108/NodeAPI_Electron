@@ -1,0 +1,52 @@
+#contentheader {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    min-height: 80;
+    background: #fff;
+    .pe-7s-world {
+        font-weight: 400;
+        font-size: 55px;
+        color: #37a000;
+    }
+    .content-header {
+        position: relative;
+        padding: 12px 30px;
+        background-color: #fff;
+        border-bottom: 1px solid #e1e6ef;
+        margin-bottom: 20px;
+        .header-title h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header-icon {
+            font-size: 55px;
+            color: #37a000;
+            width: 68px;
+            float: left;
+            margin-top: -4px;
+            line-height: 0;
+            padding-left: 9px;
+        }
+        .header-title {
+            margin-left: 68px;
+            .breadcrumb {
+                float: right;
+                background: #fff;
+                margin-top: 0;
+                margin-bottom: 0;
+                font-size: 12px;
+                padding: 7px;
+                position: absolute;
+                bottom: 18px;
+                right: 40px;
+                border-radius: 0;
+                border: 1px solid #e1e6ef;
+                font-weight: 600;
+            }
+        }
+    }
+
+    
+}
+

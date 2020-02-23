@@ -1,0 +1,49 @@
+#product {
+  min-height: 100vh;
+
+  /**
+    Content
+    */
+  min-height: 100%;
+  .addBtn {
+    background: #327310;
+  }
+  .addBtn:hover {
+    background: #459e17;
+  }
+  .editForm {
+    padding-top: 10px;
+  }
+  .title {
+    text-align: right;
+    justify-content: center;
+    justify-items: flex-end;
+  }
+  label .required {
+    color: #f9264c;
+    font-style: normal;
+    margin-left: 3px;
+  }
+  .form-check-label .item{
+    margin-left: 40px;
+    padding: 0px 0 7px;
+  }
+  .form-check-label {
+    margin-left: 40px;
+    padding: 0px 0 5px;
+  }
+  .tableButton {
+    width: 60px;
+    height: 24px;
+  }
+  .tableButton:hover {
+    border-color: none;
+  }
+  .status {
+    border-radius: 20px;
+    background-color: #00a65a!important;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+  }
+}
