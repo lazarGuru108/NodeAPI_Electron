@@ -18,15 +18,9 @@ class Sidebar extends React.Component {
         }
     }
 
-    handleSubmenu = (param)=>{
-        console.log(param);
-        let keyPath = [param.key];
-        this.props.changeMenu(keyPath);
-    }
-
     handleMenu = (param) => {
         const { item, key, keyPath, domEvent } = param;
-        console.log(param);
+        // console.log(param);
         let title = "";
         let subtitle = "";
         let len = keyPath.length;
@@ -44,13 +38,16 @@ class Sidebar extends React.Component {
             subtitle = menuData.menus[pKey].children[cKey].title;
             url = routes[menuData.menus[pKey].children[cKey].url];
         }
+        this.props.handleMenu(keyPath, title, subtitle, url);
+    }
 
-        this.props.changeMenu(keyPath, title, subtitle, url);
+    onOpenChange = (openKeys) => {
+        this.props.onOpenChange(openKeys);
     }
 
     render() {
         let { param } = this.props;
-        console.log(param);
+        // console.log(param);
         return (
             <>
                 <div className="dashlogo container">
@@ -71,7 +68,7 @@ class Sidebar extends React.Component {
                     </div>
                 </div>
                 <Menu theme="dark" className="sidebar-menu" mode="inline" 
-                selectedKeys={param.selectedKeys} openKeys={param.openKeys}
+                selectedKeys={param.selectedKeys} openKeys={param.openKeys} onOpenChange={this.onOpenChange} subMenuCloseDelay='12' subMenuOpenDelay={5000} forceSubMenuRender={true}
                     onClick={this.handleMenu}>
                     {
                         menuData.menus.map((menu, pKey) => (
@@ -92,7 +89,6 @@ class Sidebar extends React.Component {
                                             <span>{menu.title}</span>
                                         </span>
                                     }
-                                    onTitleClick={this.handleSubmenu}
                                 >
                                     {
                                         menu.children.map((cMenu, cKey) =>

@@ -1,0 +1,47 @@
+{
+    "tables": [
+        {
+            "key": 0,
+            "refno": 1,
+            "fromStore": "Store 01(This store)",
+            "toStore": "Store 01",
+            "totalItem": "1231231231",
+            "totalQuantity": "0", 
+            "refNo": "",
+            
+            "createdAt": "2/11/2020"
+        },
+        {
+            "key": 1,
+            "refno": 2,
+            "fromStore": "Store 02(This store)",
+            "toStore": "Store 01",
+            "totalItem": "12312232131231",
+            "totalQuantity": "0", 
+            "refNo": "",
+            
+            "createdAt": "2/21/2020"
+        },
+        {
+            "key": 2,
+            "refno": 3,
+            "fromStore": "Store 03(This store)",
+            "toStore": "Store 01",
+            "totalItem": "12312231231231", 
+            "totalQuantity": "0",
+            "refNo": "",
+            "email" : "user3@gmail.com", 
+            "gtin": "gtin3",
+            "address": "address3",
+            "city": "city3",
+            "state": "state3",
+            "country": "count3",
+            "storeSelect": false,
+            "stores": ["store 4", "store 2"],
+            "detail": "detail 3",
+            "status": "Inactive",
+            "order": 3,
+            "createdAt": "2/15/2020"
+        }
+    ]
+}

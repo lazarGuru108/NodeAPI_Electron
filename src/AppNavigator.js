@@ -19,6 +19,10 @@ import { getAllUsers } from './store/actions/userAction.js';
 import { connect } from 'react-redux';
 import Sales from './pages/Sales/Sales.js';
 import menuData from './constants/menudata.json';
+import ManageUsers from './pages/Users/ManageUsers.js';
+import ManageStores from './pages/Stores/ManageStores.js';
+import Analytics from './pages/Analytics/Analytics.js';
+import StockTransfer from './pages/Stock/StockTransfer.js';
 
 const { Sider, Content } = Layout;
 
@@ -26,14 +30,14 @@ const { Sider, Content } = Layout;
 class AppNavigator extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       collapsed: false,
       sidebarParams: {
         userName: "Admin User",
         isOnline: true,
         selectedKeys: ['0'],
-        openKeys: ['0']
+        openKeys: []
       },
       title: 'Dashboard',
       subTitle: '',
@@ -42,7 +46,9 @@ class AppNavigator extends React.Component {
 
   componentDidMount() {
     let url = window.location.pathname;
-    let urlKey = "";
+    // let prev = usePrevious(sidebarParams);
+    console.log(url);
+    /* let urlKey = "";
     for(let key in routes) {
       if(routes[key] === url) {
         urlKey = key;
@@ -75,7 +81,7 @@ class AppNavigator extends React.Component {
     let selectedKeys = [ck.toString()];
     let openKeys = [pk.toString()];
     let sidebarParams = {...this.state.sidebarParams, selectedKeys: selectedKeys, openKeys: openKeys};
-    this.setState({sidebarParams, title, subTitle});
+    this.setState({sidebarParams, title, subTitle}); */
   }
 
   toggle = () => {
@@ -84,33 +90,29 @@ class AppNavigator extends React.Component {
     });
   };
 
-  changeMenu = (keyPath, title, subTitle, url) => {
-    console.log(keyPath, title, subTitle);
-    let { selectedKeys, openKeys } = this.state.sidebarParams;
-    console.log(selectedKeys, openKeys);
+  handleMenu = (keyPath, title, subTitle, url) => {
     let sidebarParams = {
       ...this.state.sidebarParams,
-      openKeys: keyPath[1]?[keyPath[1]]:[keyPath[0]],
-      selectedKeys: keyPath[1]?[keyPath[0]]:[]
+      selectedKeys: [keyPath[0]],
+      openKeys: keyPath.length === 1 ? [] : this.state.sidebarParams.openKeys
     }
-    if(title && subTitle, url) {
-      this.setState({ title, subTitle, sidebarParams });
-      return <Redirect to={url} />
-    }else{
-      if(keyPath[1]) {
-        openKeys.push(keyPath[1]);
-        selectedKeys.push(keyPath[0]);
-      }else{
-        openKeys.push(keyPath[0]);
+    this.setState({ sidebarParams: sidebarParams, title: title, subTitle: subTitle });
+    // console.log(keyPath.length);
+  }
+
+  onOpenChange = (openKeys) => {
+    const latestOpenKey = openKeys.find(key => this.state.sidebarParams.openKeys.indexOf(key) === -1);
+    let openedKeys = this.state.sidebarParams.openKeys;
+    if (openedKeys.indexOf(latestOpenKey) === -1) {
+      let sidebarParams = {
+        ...this.state.sidebarParams, openKeys: [latestOpenKey]
       }
-      
-      sidebarParams = {
-        ...this.state.sidebarParams,
-        openKeys: openKeys,
-        selectedKeys: selectedKeys
+      this.setState({ sidebarParams });
+    } else {
+      let sidebarParams = {
+        ...this.state.sidebarParams, openKeys: latestOpenKey ? [latestOpenKey] : []
       }
-      console.log(sidebarParams);
-      this.setState({sidebarParams});
+      this.setState({ sidebarParams });
     }
   }
 
@@ -121,7 +123,7 @@ class AppNavigator extends React.Component {
           <Route path={routes.HOME} exact component={HomePage} />
           <AdminLayout id="admin">
             <Sider id="sidebar" trigger={null} collapsible collapsed={this.state.collapsed} width={250}>
-              <Sidebar changeMenu={this.changeMenu} param={this.state.sidebarParams} toggleMenu={this.handleMenu} />
+              <Sidebar handleMenu={this.handleMenu} param={this.state.sidebarParams} onOpenChange={this.onOpenChange} />
             </Sider>
             <Layout>
               <MainHeader toggle={this.toggle} />
@@ -132,6 +134,10 @@ class AppNavigator extends React.Component {
                 <Route path={routes.PURCHASE} exact component={Purchase} />
                 <Route path={routes.PRODUCT} exact component={Product} />
                 <Route path={routes.SALES} exact component={Sales} />
+                <Route path={routes.MANAGEUSERS} exact component={ManageUsers} />
+                <Route path={routes.MANAGESTORES} exact component={ManageStores} />
+                <Route path={routes.ANALYTICS} exact component={Analytics} />
+                <Route path={routes.STOCKTRANSFER} exact component={StockTransfer} />
               </Content>
               <MainFooter />
             </Layout>
@@ -144,18 +150,18 @@ class AppNavigator extends React.Component {
 
 }
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state) => {
   return {
     users: state.users,
     sales: state.sales,
   }
 };
 
-const mapDispatchToProps = (dispatch)=>{
+const mapDispatchToProps = (dispatch) => {
   return {
-    getAllUsers: ()=>dispatch(getAllUsers()),
-    getAllSales: ()=>dispatch(getAllSales())
+    getAllUsers: () => dispatch(getAllUsers()),
+    getAllSales: () => dispatch(getAllSales())
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (AppNavigator);
+export default connect(mapStateToProps, mapDispatchToProps)(AppNavigator);

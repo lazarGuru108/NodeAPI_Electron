@@ -346,13 +346,13 @@ class EditForm extends React.Component {
                         </div>
                         <div className="form-group">
                             <div className="row">
-                                <div className="col-3 title">
+                                <div className="col-12 col-md-3 col-sm-12 title">
                                     {/* <label htmlFor="uname">Order <i className="required">*</i></label> */}
                                 </div>
-                                <div className="col-1">
+                                <div className="col-12 col-md-1 col-sm-12">
                                     <Button type="primary" onClick={this.saveHandler}><Icon type="save" />Save</Button>
                                 </div>
-                                <div className="col-1">
+                                <div className="col-12 col-md-1 col-sm-12">
                                     <Button type="primary" onClick={this.resetHandler}><Icon type="sync" />Reset</Button>
                                 </div>
                                 <div className="valid-feedback">Valid.</div>

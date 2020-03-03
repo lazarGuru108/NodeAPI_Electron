@@ -1,0 +1,40 @@
+{
+    "tables": [
+        {
+            "key": 0,
+            "sl": 0,
+            "uname": "user1",
+            "country" : "Kihol", 
+            "address": "Johj.sdf.sd", 
+            "status": "Active",
+            "currencys": ["currency 1", "currency 2"],
+            "paymethod": ["Bkash"],
+            "printers": ["epson 1", "epson 2"],
+            "createdAt": "2/11/2020"
+        },
+        {
+            "key": 1,
+            "sl": 1,
+            "uname": "user1",
+            "country" : "EVdsdg", 
+            "address": "sdfew23", 
+            "status": "Active",
+            "currencys": ["currency 2", "currency 3"],
+            "paymethod": ["Bkash", "Gift card"],
+            "printers": ["epson 1"],
+            "createdAt": "2/11/2020"
+        },
+        {
+            "key": 2,
+            "sl": 2,
+            "uname": "user1",
+            "country" : "Dgdseg", 
+            "address": "sdfgew.h.y", 
+            "status": "Active",
+            "currencys": ["currency 1", "currency 3"],
+            "paymethod": ["Cash on Delivery"],
+            "printers": ["epson 2"],
+            "createdAt": "2/11/2020"
+        }
+    ]
+}

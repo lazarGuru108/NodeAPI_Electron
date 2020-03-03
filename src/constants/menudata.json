@@ -163,24 +163,14 @@
             "icon": "bar-chart",
             "children": [
                 {
-                    "title": "New Sale",
-                    "url": "DASHBOARD",
+                    "title": "Stock Transfer",
+                    "url": "STOCKTRANSFER",
                     "icon": "shopping"
                 },
                 {
-                    "title": "Manage Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "DASHBOARD",
-                    "icon": null
+                    "title": "Stock Transfer",
+                    "url": "STOCKTRANSFER",
+                    "icon": "shopping"
                 }
             ]
         },
@@ -406,18 +396,18 @@
             "icon": "setting",
             "children": [
                 {
-                    "title": "New Sale",
-                    "url": "HOME",
+                    "title": "Manage Users",
+                    "url": "MANAGEUSERS",
                     "icon": "shopping"
                 },
                 {
-                    "title": "Manage Sale",
-                    "url": "HOME",
+                    "title": "Manage Stores",
+                    "url": "MANAGESTORES",
                     "icon": null
                 },
                 {
-                    "title": "POS Sale",
-                    "url": "HOME",
+                    "title": "Analytics",
+                    "url": "ANALYTICS",
                     "icon": null
                 },
                 {

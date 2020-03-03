@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';
 import '../Product.scss';
 import noImage from '../../../assets/images/noimage.jpg'
 import { Select, Button, Icon } from 'antd';
+import JoditEditor from "jodit-react";
 
 const { Option } = Select;
 
@@ -26,7 +27,15 @@ class EditForm extends React.Component {
                 { value: 'AE - United Arab Emirates (+971)', name: 'AE - United Arab Emirates (+971)' },
                 { value: 'Yiminghe', name: 'yiminghe' },
             ],
-            formData: { stores: [] }
+            formData: { stores: [] },
+            
+            editor: null,
+            content: '',
+            config: {
+                readonly: false,
+                // toolbar: true,
+            }
+
         }
         this.saveHandler = this.saveHandler.bind(this);
         this.resetHandler = this.resetHandler.bind(this);
@@ -107,7 +116,7 @@ class EditForm extends React.Component {
                                 </div>
                                 <div className="col-7">
                                     <a href="#">
-                                        <img src={noImage}/>
+                                        <img src={noImage} />
                                     </a>
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
@@ -119,27 +128,27 @@ class EditForm extends React.Component {
                                 <div className="col-3 title">
                                     <label htmlFor="uname">Product Type <i className="required">*</i></label>
                                 </div>
-                                
-                                            <div className="col-md-7 col-12">
-                                                <Select
-                                                    showSearch
-                                                    optionFilterProp="children"
-                                                    defaultValue="AD - Andorra (+376)"
-                                                    /* onChange={handleChange}
-                                                    onFocus={handleFocus}
-                                                    onBlur={handleBlur} */
-                                                    value={country || ''}
-                                                    name="country" onChange={(e) => { this.handleFieldChange(e, 'country') }}
-                                                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                                                >
-                                                    {
-                                                        this.state.allCountry.map((c, key) => (
-                                                            <Option key={key} value={c.value}>{c.name}</Option>
-                                                        ))
-                                                    }
-                                                </Select>
-                                            </div>
-                                       
+
+                                <div className="col-md-7 col-12">
+                                    <Select
+                                        showSearch
+                                        optionFilterProp="children"
+                                        defaultValue="AD - Andorra (+376)"
+                                        /* onChange={handleChange}
+                                        onFocus={handleFocus}
+                                        onBlur={handleBlur} */
+                                        value={country || ''}
+                                        name="country" onChange={(e) => { this.handleFieldChange(e, 'country') }}
+                                        filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+                                    >
+                                        {
+                                            this.state.allCountry.map((c, key) => (
+                                                <Option key={key} value={c.value}>{c.name}</Option>
+                                            ))
+                                        }
+                                    </Select>
+                                </div>
+
                                 <div className="valid-feedback">Valid.</div>
                                 <div className="invalid-feedback">Please fill out this field.</div>
                             </div>
@@ -336,12 +345,30 @@ class EditForm extends React.Component {
                         <div className="form-group">
                             <div className="row">
                                 <div className="col-3 title">
+                                    <label htmlFor="uname">Alert Quantity <i className="required">*</i></label>
+                                </div>
+                                <div className="col-7">
+                                    <input type="number" className="form-control" required
+                                        value={order || ''}
+                                        name="order" onChange={(e) => { this.handleFieldChange(e, 'order') }} />
+                                </div>
+                                <div className="valid-feedback">Valid.</div>
+                                <div className="invalid-feedback">Please fill out this field.</div>
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <div className="row">
+                                <div className="col-3 title">
                                     <label htmlFor="uname">Details </label>
                                 </div>
                                 <div className="col-7">
-                                    <input type="textarea" className="form-control" required
-                                        value={detail || ''}
-                                        name="detail" onChange={(e) => { this.handleFieldChange(e, 'detail') }}
+                                    <JoditEditor
+                                        ref={this.state.editor}
+                                        value={this.state.content}
+                                        config={this.state.config}
+                                        tabIndex={1} // tabIndex of textarea
+                                        onBlur={newContent => this.setState({content: newContent})} // preferred to use only this option to update the content for performance reasons
+                                        onChange={newContent => { /* console.log(newContent) */ }}
                                     />
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
@@ -395,10 +422,10 @@ class EditForm extends React.Component {
                                 <div className="col-3 title">
                                     {/* <label htmlFor="uname">Order <i className="required">*</i></label> */}
                                 </div>
-                                <div className="col-1">
+                                <div className="col-12 col-md-1 col-sm-12">
                                     <Button type="primary" onClick={this.saveHandler}><Icon type="save" />Save</Button>
                                 </div>
-                                <div className="col-1">
+                                <div className="col-12 col-md-1 col-sm-12">
                                     <Button type="primary" onClick={this.resetHandler}><Icon type="sync" />Reset</Button>
                                 </div>
                                 <div className="valid-feedback">Valid.</div>

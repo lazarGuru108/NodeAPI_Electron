@@ -1,0 +1,43 @@
+{
+    "tables": [
+        {
+            "key": 0,
+            "id": 1,
+            "uname": "user1",
+            "email" : "user1@gmail.com", 
+            "mobile": "1231231231", 
+            "group": "group1",
+            "storeSelect": true,
+            "stores": ["store 1", "store 2"],
+            "status": "Active",
+            "order": 4,
+            "createdAt": "2/11/2020"
+        },
+        {
+            "key": 1,
+            "id": 2,
+            "uname": "user2",
+            "email" : "user2@gmail.com", 
+            "mobile": "12312232131231", 
+            "group": "group2",
+            "storeSelect": true,
+            "stores": ["store 3", "store 2"],
+            "status": "Active",
+            "order": 2,
+            "createdAt": "2/21/2020"
+        },
+        {
+            "key": 2,
+            "id": 3,
+            "uname": "user3",
+            "email" : "user3@gmail.com", 
+            "mobile": "12312231231231", 
+            "group": "group3",
+            "storeSelect": false,
+            "stores": ["store 4", "store 2"],
+            "status": "Inactive",
+            "order": 3,
+            "createdAt": "2/15/2020"
+        }
+    ]
+}

@@ -6,6 +6,10 @@
     "MANAGESUPPLIER": "/Csupplier/manage_supplier",
     "PURCHASE": "/purchase",
     "PRODUCT": "/product",
-    "SALES": "/sales"
+    "SALES": "/sales",
+    "MANAGEUSERS": "/manageusers",
+    "MANAGESTORES": "/managestores",
+    "ANALYTICS": "/analytics",
+    "STOCKTRANSFER": "/stocktransfer"
   }
   

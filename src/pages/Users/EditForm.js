@@ -1,10 +1,11 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import './ManageSupplier.scss';
-import { Select, Button, Icon, Input } from 'antd';
+import './ManageUsers.scss';
+import { Select, Button, Icon } from 'antd';
+import noImage from '../../assets/images/noimage.jpg'
+import { Link } from 'react-router-dom';
 
 const { Option } = Select;
-const { TextArea } = Input;
 
 class EditForm extends React.Component {
     constructor(props) {
@@ -16,17 +17,13 @@ class EditForm extends React.Component {
                 'store 3',
                 'store 4',
             ],
-            allStates: [
-                { value: 'jack', name: 'Andaman & Nicobar'},
-                { value: 'lucy', name: 'Arunachal Pradesh'},
-                { value: 'Yiminghe', name: 'Assam'},
+            allGroups: [
+                { value: 'group1', name: 'group1' },
+                { value: 'group2', name: 'group2' },
+                { value: 'group3', name: 'group3' },
             ],
-            allCountry: [
-                { value: 'AD - Andorra (+376)', name: 'AD - Andorra (+376)'},
-                { value: 'AE - United Arab Emirates (+971)', name: 'AE - United Arab Emirates (+971)'},
-                { value: 'Yiminghe', name: 'yiminghe'},
-            ],
-            formData: {stores: []}
+            
+            formData: { stores: [] }
         }
         this.saveHandler = this.saveHandler.bind(this);
         this.resetHandler = this.resetHandler.bind(this);
@@ -34,52 +31,52 @@ class EditForm extends React.Component {
     }
 
     componentWillReceiveProps(props) {
-        this.setState({formData: {...props.initData}});
+        this.setState({ formData: { ...props.initData } });
     }
 
     componentDidMount() {
-        this.setState({formData: {...this.props.initData }});
+        this.setState({ formData: { ...this.props.initData } });
     }
 
     changeName = (e) => {
         this.setState({ codeName: e.target.value });
     }
 
-    handleFieldChange = (e, field, s=undefined) => {
+    handleFieldChange = (e, field, s = undefined) => {
         let val = e;
-        let otherFields = ['state', 'country', 'status'];
+        let otherFields = ['group', 'status'];
         let formData = this.state.formData;
-        if(otherFields.indexOf(field) === -1) {
+        if (otherFields.indexOf(field) === -1) {
             val = e.target.value;
         }
-        
-        if(field === 'storeSelect') {
-           val = e.target.checked;
-           let stores = val?this.state.allStores:[];
-           console.log(val, stores);
-           formData.storeSelect = val;
-           formData.stores = stores;
-           this.setState({ formData }, ()=>{
-               console.log(this.state.formData);
-           });
+
+        if (field === 'storeSelect') {
+            val = e.target.checked;
+            let stores = val ? this.state.allStores : [];
+            console.log(val, stores);
+            formData.storeSelect = val;
+            formData.stores = stores;
+            this.setState({ formData }, () => {
+                console.log(this.state.formData);
+            });
         }
-        if(field === 'stores') {
-            
+        if (field === 'stores') {
+
             val = e.target.checked;
             let stores = this.state.formData.stores || [];
-            if(!val) {
-                stores = stores.filter((ss)=>ss!== s);
-            }else{
+            if (!val) {
+                stores = stores.filter((ss) => ss !== s);
+            } else {
                 stores.push(s);
             }
             val = stores;
         }
-        
-        this.setState({ formData: {...formData, [field]: val}}, ()=>{
+
+        this.setState({ formData: { ...formData, [field]: val } }, () => {console.log(field,val);
         });
     }
 
-    handleSearchStore = (e)=>{
+    handleSearchStore = (e) => {
         let val = e.target.value;
 
     }
@@ -89,14 +86,15 @@ class EditForm extends React.Component {
         this.props.onSave(this.state.formData);
     }
 
-    resetHandler () {
-        this.setState({formData: {stores: []}});
+    resetHandler() {
+        this.setState({ formData: { stores: [] } });
     }
 
     render() {
-        let { uname, email, mobile, gtin, address, city, 
-            state, country, storeSelect, stores, detail, status, order} = this.state.formData
-            console.log(stores);
+        let { uname, email, mobile,group, password, repassword,
+            storeSelect, stores, status, order } = this.state.formData;
+        // console.log(group);
+        // let repassword = '';
         return (
             <>
                 <div className="editForm">
@@ -104,11 +102,12 @@ class EditForm extends React.Component {
                         <div className="form-group">
                             <div className="row">
                                 <div className="col-3 title">
-                                    <label htmlFor="uname">Name <i className="required">*</i></label>
+                                    <label >Thumbnail </label>
                                 </div>
                                 <div className="col-7">
-                                    <input type="text" className="form-control" name="uname" onChange={(e) => this.handleFieldChange(e, 'uname')}
-                                        placeholder="Enter username" name="uname" required  value={uname||''} />
+                                    <Link>
+                                        <img src={noImage} />
+                                    </Link>
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
                                 <div className="invalid-feedback">Please fill out this field.</div>
@@ -117,11 +116,11 @@ class EditForm extends React.Component {
                         <div className="form-group">
                             <div className="row">
                                 <div className="col-3 title">
-                                    <label htmlFor="uname">Code Name <i className="required">*</i></label>
+                                    <label htmlFor="uname">Name <i className="required">*</i></label>
                                 </div>
                                 <div className="col-7">
-                                    <input type="text" className="form-control" name="codename" required onChange={(e) => this.handleFieldChange(e, 'uname')} 
-                                    value={uname||''} />
+                                    <input type="text" className="form-control" name="uname" onChange={(e) => this.handleFieldChange(e, 'uname')}
+                                        placeholder="Enter username" name="uname" required value={uname || ''} />
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
                                 <div className="invalid-feedback">Please fill out this field.</div>
@@ -133,9 +132,9 @@ class EditForm extends React.Component {
                                     <label htmlFor="uname">Email:<i className="required">*</i></label>
                                 </div>
                                 <div className="col-7">
-                                    <input type="email" className="form-control" name="email" 
-                                    value={email||''}
-                                    onChange={(e) => { this.handleFieldChange(e, 'email') }} placeholder="Enter Email" name="uname" required />
+                                    <input type="email" className="form-control" name="email"
+                                        value={email || ''}
+                                        onChange={(e) => { this.handleFieldChange(e, 'email') }} placeholder="Enter Email" name="uname" required />
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
                                 <div className="invalid-feedback">Please fill out this field.</div>
@@ -147,9 +146,9 @@ class EditForm extends React.Component {
                                     <label htmlFor="uname">Mobile <i className="required">*</i></label>
                                 </div>
                                 <div className="col-7">
-                                    <input type="text" className="form-control" required 
-                                    value={mobile||''}
-                                    name="mobile" onChange={(e) => { this.handleFieldChange(e, 'mobile') }} />
+                                    <input type="text" className="form-control" required
+                                        value={mobile || ''}
+                                        name="mobile" onChange={(e) => { this.handleFieldChange(e, 'mobile') }} />
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
                                 <div className="invalid-feedback">Please fill out this field.</div>
@@ -158,12 +157,12 @@ class EditForm extends React.Component {
                         <div className="form-group">
                             <div className="row">
                                 <div className="col-3 title">
-                                    <label htmlFor="uname">Gtin <i className="required">*</i></label>
+                                    <label htmlFor="password">Password <i className="required">*</i></label>
                                 </div>
                                 <div className="col-7">
-                                    <input type="text" className="form-control" required 
-                                    value={gtin||''}
-                                    name="gtin" onChange={(e) => { this.handleFieldChange(e, 'gtin') }} />
+                                    <input type="password" className="form-control" required
+                                        value={password || ''}
+                                        name="password" onChange={(e) => { this.handleFieldChange(e, 'password') }} />
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
                                 <div className="invalid-feedback">Please fill out this field.</div>
@@ -172,12 +171,12 @@ class EditForm extends React.Component {
                         <div className="form-group">
                             <div className="row">
                                 <div className="col-3 title">
-                                    <label htmlFor="uname">Address <i className="required">*</i></label>
+                                    <label htmlFor="repassword">Retype Password <i className="required">*</i></label>
                                 </div>
                                 <div className="col-7">
-                                    <TextArea rows={3} className="form-control" required 
-                                    value={address||''}
-                                    name="address" onChange={(e) => { this.handleFieldChange(e, 'address') }} />
+                                    <input type="password" className="form-control" required
+                                        value={repassword || ''}
+                                        name="repassword" onChange={(e) => { this.handleFieldChange(e, 'repassword') }} />
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
                                 <div className="invalid-feedback">Please fill out this field.</div>
@@ -186,37 +185,22 @@ class EditForm extends React.Component {
                         <div className="form-group">
                             <div className="row">
                                 <div className="col-3 title">
-                                    <label htmlFor="uname">City </label>
-                                </div>
-                                <div className="col-7">
-                                    <input type="text" className="form-control" required 
-                                    value={city||''}
-                                    name="city" onChange={(e) => { this.handleFieldChange(e, 'city') }} />
-                                </div>
-                                <div className="valid-feedback">Valid.</div>
-                                <div className="invalid-feedback">Please fill out this field.</div>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <div className="row">
-                                <div className="col-3 title">
-                                    <label htmlFor="sel1">State </label>
+                                    <label htmlFor="sel1">Group </label>
                                 </div>
                                 <div className="col-md-7 col-12">
                                     <Select
                                         showSearch
                                         optionFilterProp="children"
-                                        defaultValue="AD - Andorra (+376)"
-                                        defaultValue="lucy"
+                                        defaultValue={group}
                                         /* onChange={handleChange}
                                         onFocus={handleFocus}
                                         onBlur={handleBlur} */
-                                        value={state||''}
+                                        // value={state || ''}
                                         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                                        name="state" onChange={(e) => { this.handleFieldChange(e, 'state') }}
+                                        name="group" onChange={(e) => { this.handleFieldChange(e, 'group') }}
                                     >
                                         {
-                                            this.state.allStates.map((s, key)=>(
+                                            this.state.allGroups.map((s, key) => (
                                                 <Option key={key} value={s.value}>{s.name}</Option>
                                             ))
                                         }
@@ -227,27 +211,15 @@ class EditForm extends React.Component {
                         <div className="form-group">
                             <div className="row">
                                 <div className="col-3 title">
-                                    <label htmlFor="sel1">Country </label>
+                                    <label htmlFor="uname">Date of Birth </label>
                                 </div>
-                                <div className="col-md-7 col-12">
-                                    <Select
-                                        showSearch
-                                        optionFilterProp="children"
-                                        defaultValue="AD - Andorra (+376)"
-                                        /* onChange={handleChange}
-                                        onFocus={handleFocus}
-                                        onBlur={handleBlur} */
-                                        value={country||''}
-                                        name="country" onChange={(e) => { this.handleFieldChange(e, 'country') }}
-                                        filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                                    >
-                                        {
-                                            this.state.allCountry.map((c, key)=>(
-                                            <Option key={key} value={c.value}>{c.name}</Option>
-                                            ))
-                                        }
-                                    </Select>
+                                <div className="col-7">
+                                    <input type="date" className="form-control" required
+                                        /* value={city || ''} */ defaultValue="2020-01-01"
+                                        name="birth" onChange={(e) => { this.handleFieldChange(e, 'birth') }} />
                                 </div>
+                                <div className="valid-feedback">Valid.</div>
+                                <div className="invalid-feedback">Please fill out this field.</div>
                             </div>
                         </div>
                         <div className="form-group">
@@ -257,48 +229,34 @@ class EditForm extends React.Component {
                                 </div>
                                 <div className="col-7">
                                     <label className="form-check-label" >
-                                        <input type="checkbox" className="form-check-input" required 
-                                        checked={storeSelect||false}
-                                        name="storeSelect" onChange={(e) => { this.handleFieldChange(e, 'storeSelect') }} />
+                                        <input type="checkbox" className="form-check-input" required
+                                            checked={storeSelect || false}
+                                            name="storeSelect" onChange={(e) => { this.handleFieldChange(e, 'storeSelect') }} />
                                         <span>select/deselect</span>
                                     </label>
                                     <div>
-                                        <input type="text" className="form-control" required name="searchStore" 
-                                        onChange={(e) => { this.handleSearchStore(e) }} />
+                                        <input type="text" className="form-control" required name="searchStore"
+                                            onChange={(e) => { this.handleSearchStore(e) }} />
                                     </div>
                                     <div className="form-check-fields" style={{ background: '#f5f5f5', padding: '15px 0px 0px' }}>
                                         {
                                             this.state.allStores.map((s, key) => {
-                                                
+
                                                 let isSelected = stores.indexOf(s) > -1;
-                                               return (
-                                                <div key={key}>
-                                                    <label className="form-check-label" >
-                                                        <input type="checkbox" className="form-check-input" required checked={isSelected}
-                                                            name="stores" onChange={(e) => { this.handleFieldChange(e, 'stores', s) }}
-                                                            
-                                                    /><span>{s}</span>
-                                                    </label>
-                                                </div>
-                                                )}
+                                                return (
+                                                    <div key={key}>
+                                                        <label className="form-check-label" >
+                                                            <input type="checkbox" className="form-check-input" required checked={isSelected}
+                                                                name="stores" onChange={(e) => { this.handleFieldChange(e, 'stores', s) }}
+
+                                                            /><span>{s}</span>
+                                                        </label>
+                                                    </div>
+                                                )
+                                            }
                                             )
                                         }
                                     </div>
-                                </div>
-                                <div className="valid-feedback">Valid.</div>
-                                <div className="invalid-feedback">Please fill out this field.</div>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <div className="row">
-                                <div className="col-3 title">
-                                    <label htmlFor="uname">Details </label>
-                                </div>
-                                <div className="col-7">
-                                    <TextArea rows={3} className="form-control" required 
-                                    value={detail||''}
-                                    name="detail" onChange={(e) => { this.handleFieldChange(e, 'detail') }}
-                                    />
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
                                 <div className="invalid-feedback">Please fill out this field.</div>
@@ -319,7 +277,7 @@ class EditForm extends React.Component {
                                         /* onChange={handleChange}
                                         onFocus={handleFocus}
                                         onBlur={handleBlur} */
-                                        value={status||'Active'}
+                                        value={status || 'Active'}
                                         name="status" onChange={(e) => { this.handleFieldChange(e, 'status') }}
                                         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                                     >
@@ -338,9 +296,9 @@ class EditForm extends React.Component {
                                     <label htmlFor="uname">Order <i className="required">*</i></label>
                                 </div>
                                 <div className="col-7">
-                                    <input type="number" className="form-control" required 
-                                    value={order||''}
-                                    name="order" onChange={(e) => { this.handleFieldChange(e, 'order') }} />
+                                    <input type="number" className="form-control" required
+                                        value={order || ''}
+                                        name="order" onChange={(e) => { this.handleFieldChange(e, 'order') }} />
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
                                 <div className="invalid-feedback">Please fill out this field.</div>

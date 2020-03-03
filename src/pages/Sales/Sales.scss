@@ -4,5 +4,34 @@
     .ant-table-wrapper{
       width: 100%;
     }
+    .ant-table-placeholder {
+      height: 560px;
+    }
+  }
+  .firstCol {
+    width: 60%;
+  }
+  .secondCol {
+    width: 20%;
+    text-align: right;
+  }
+  .thirdCol {
+    width: 20%;
+  }
+  .table-responsive-md {
+    width: 100%;
+    height: 100%;
+  }
+  .table {
+    margin-bottom: 0;
+  }
+  .bottomButton {
+    .ant-btn-group {
+      height: 40px;
+      button {
+        height: 100%;
+        font-size: 18px;
+      }
+    }
   }
 }

@@ -1,0 +1,126 @@
+#analytics {
+  .container {
+    padding: 10px;
+  }
+
+  /* .piechartContainer {
+        padding: 10px;
+    }
+ */
+  .chart {
+    padding: 10px;
+  }
+
+  .secondRow {
+    padding: 10px;
+  }
+  .thirdRow {
+    padding: 10px 25px;
+  }
+  .loginlogs {
+    padding: 10px 25px;
+  }
+  .firstCol,
+  .secondCol {
+    width: 50%;
+    height: 20px;
+    vertical-align: top;
+    text-align: end;
+    border-top: 1px solid #dee2e6;
+    color: white;
+  }
+
+  .grayRow {
+    background-color: #d2d6de;
+    height: 20px;
+    .firstCol,
+    .secondCol {
+      color: black;
+    }
+  }
+  .greenRow {
+    background-color: #00a65a;
+  }
+  .redRow {
+    background-color: #dd4b39;
+  }
+  .blueRow {
+    background-color: #0073b7;
+  }
+
+  .yellowRow {
+    background-color: #f39c12;
+    .firstCol {
+      height: 50px;
+      font-size: large;
+      font-weight: bold;
+    }
+    .secondCol {
+      height: 50px;
+      font-size: large;
+      font-weight: bold;
+    }
+  }
+  .rowHeader {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    background-color: #0073b7;
+  }
+  .thirdContent {
+    width: 100%;
+    border: 1px solid rgba(0, 116, 183, 0.411);
+    // height: 300px;
+    padding: 20px;
+    display: flex;
+    // height: 40px;
+    // background-color: #0073B7;
+  }
+
+  .best-customer {
+    position: relative;
+    text-align: center;
+    height: 258px;
+    color: #3c8dbc;
+    overflow: hidden;
+    margin-bottom: 0;
+    border: 1px solid #3c8dbc;
+    background-color: #d9edf7;
+  }
+
+    .inner {
+      position: relative;
+      padding-top: 20px;
+      z-index: 10;
+    }
+
+    .title {
+      font-size: 2rem;
+      color: inherit;
+    }
+    
+    .small-box h3 {
+      // font-size: 38px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+      white-space: nowrap;
+      padding: 0;
+    }
+
+    .name {
+        color: #3c8dbc;
+        font-size: 24px;
+        border-radius: 40px;
+        background-color: #fff;
+        padding: 3px 20px;
+        display: inline-block;
+        border: 2px dotted #3c8dbc;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+  
+}
