@@ -2,7 +2,7 @@
     .content {
         margin: 24px 16px;
         padding: 24px;
-        background: #fff;
+        // background: #fff;
         min-height: 280px;
     }
 }
@@ -122,8 +122,47 @@
   padding: 20px;
 }
 
-input {
+input.form-control {
   height: 32px;
+}
+
+.fa-files-o {
+  color: #097894;
+}
+.fa-file-excel-o {
+  color: #00a65a;
+}
+.fa-file-text-o {
+  color: #f39c12;
+}
+.fa-file-pdf-o {
+  color: #dd4b39;
+}
+.fa-envelope {
+  color: #dd4b39;
+}
+
+//new
+/* .layout {
+  background: url("../images/background.jpg")no-repeat center center fixed;
+} */
+
+.ant-layout {
+  background: url("../images/background.jpg")no-repeat center center fixed!important;
+}
+
+.ant-collapse {
+  background-color: #fafafa63!important;
+}
+
+//For Print to PDF ( only text content )
+.print-source {
+  display: none;
+}
+@media print {
+  .print-source {
+    display: block;
+  }
 }
 
 @import "./css/pe-icon-7-stroke.css";

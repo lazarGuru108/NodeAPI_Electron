@@ -5,9 +5,11 @@
             "refno": 1,
             "fromStore": "Store 01(This store)",
             "toStore": "Store 01",
-            "totalItem": "1231231231",
+            "totalItem": "214",
             "totalQuantity": "0", 
-            "refNo": "",
+            "refNo": "12",
+            "status": "Sent",
+            "from": "Store 01",
             
             "createdAt": "2/11/2020"
         },
@@ -15,10 +17,12 @@
             "key": 1,
             "refno": 2,
             "fromStore": "Store 02(This store)",
-            "toStore": "Store 01",
-            "totalItem": "12312232131231",
+            "toStore": "Store 02",
+            "totalItem": "100",
             "totalQuantity": "0", 
-            "refNo": "",
+            "refNo": "23",
+            "status": "Sent",
+            "from": "Store 01",
             
             "createdAt": "2/21/2020"
         },
@@ -27,9 +31,11 @@
             "refno": 3,
             "fromStore": "Store 03(This store)",
             "toStore": "Store 01",
-            "totalItem": "12312231231231", 
+            "totalItem": "1000", 
             "totalQuantity": "0",
-            "refNo": "",
+            "refNo": "1",
+            "status": "Pending",
+            "from": "Store 03",
             "email" : "user3@gmail.com", 
             "gtin": "gtin3",
             "address": "address3",
@@ -39,7 +45,6 @@
             "storeSelect": false,
             "stores": ["store 4", "store 2"],
             "detail": "detail 3",
-            "status": "Inactive",
             "order": 3,
             "createdAt": "2/15/2020"
         }

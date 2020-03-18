@@ -1,4 +1,5 @@
 #sales {
+  // background: url("../../assets/images/background.jpg")no-repeat center center fixed;
   
   .salesTable {
     .ant-table-wrapper{
@@ -34,4 +35,20 @@
       }
     }
   }
+
+}
+
+.dialogContent {
+  width: 800px;
+  height: 800px;
+  justify-content: 'center'!important;
+}
+.MuiDialog-paperWidthSm {
+  max-width: 800px!important;
+}
+
+.title {
+  text-align: right;
+  justify-content: center;
+  justify-items: flex-end;
 }

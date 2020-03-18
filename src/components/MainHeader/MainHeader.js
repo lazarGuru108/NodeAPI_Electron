@@ -10,13 +10,12 @@ class MainHeader extends React.Component {
 
     render() {
         return (
-            <div id="header" style={{ background: '#fff', padding: 0 }}>
+            <div id="header" style={{ /* background: '#fff',  */padding: 0 }}>
 
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-md-2 col-sm-2 col-12 text-left vertical-center">
                             <a className="sidebar-toggle"><span className="pe-7s-keypad trigger" onClick={() => this.props.toggle()}></span></a>
-
                         </div>
                         <div className="col-md-8 col-sm-10 col-12 vertical-center text-center">
                             <div className="container">

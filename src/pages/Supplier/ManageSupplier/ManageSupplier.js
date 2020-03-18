@@ -45,8 +45,6 @@ class ManageSupplier extends React.Component {
     }
 
     handleTable = (record, type)=>{
-        console.log(record, type);
-
         this.setState({activeKey: '1', stateEdit: true, initFormData: record, selectedSupply: record.key});
     }
 
@@ -55,8 +53,7 @@ class ManageSupplier extends React.Component {
         let newDataSource = [];
         if(selectedSupply > -1) {
             for(let i = 0; i<dataSource.length; i++) {
-                if(dataSource[i].key == selectedSupply) {
-                    console.log(data, selectedSupply);
+                if(dataSource[i].key === selectedSupply) {
                     newDataSource.push({...data, key: selectedSupply});
                 }else{
                     newDataSource.push(dataSource[i]);
@@ -66,7 +63,6 @@ class ManageSupplier extends React.Component {
             newDataSource = dataSource;
             newDataSource.push({...data, key: dataSource.length, id: dataSource.length + 1, createdAt: new Date().toLocaleDateString() });
         }
-        console.log(newDataSource);
         this.setState({dataSource: newDataSource, activeKey: "2", selectedSupply: false});
     }
 

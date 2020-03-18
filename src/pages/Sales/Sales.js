@@ -6,19 +6,77 @@ import './Sales.scss';
 import { connect } from 'react-redux';
 import { getAllUsers } from '../../store/actions/userAction';
 import { getAllSales } from '../../store/actions/saleAction';
-import { Button, Icon, Select, Table, Input } from 'antd';
+import { Button, Tabs, Select, Input } from 'antd';
 import TableView from './TableView';
 
-const { Option } = Select;
 
+
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import BasicInfo from './AddCustomer/BasicInfo';
+import ShippingInfo from './AddCustomer/ShippingInfo';
+import BillingInfo from './AddCustomer/BillingInfo';
+
+const { Option } = Select;
+const TabPane = Tabs.TabPane;
 class Sales extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            openAddCustomer: false,
+        }
+    }
+
+    onAddCustomer = () => {
+        this.setState({ openAddCustomer: true });
+        console.log(this.state.openAddCustomer);
+    }
+    handleClose = () => {
+        this.setState({ openAddCustomer: false });
+        console.log('sdfwe');
+    };
+
+    callback = (key) => {
+        console.log(key);
     }
 
     render() {
+        let { openAddCustomer } = this.state;
         return (
-            <div className="row" id="sales" style={{ height: '100%' }}>
+            <div className="row" id="sales" style={{ height: '100%'}}>
+                <Dialog
+                    open={openAddCustomer}
+                    onClose={() => this.handleClose}
+                    scroll="paper"
+                    disableBackdropClick={true}
+                    aria-labelledby="scroll-dialog-title"
+                    aria-describedby="scroll-dialog-description"
+                >
+                    <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
+                    <DialogContent dividers={true}
+                        children="<Button>Button</Button>"
+                    >
+                        <div className="dialogContent">
+                            <input type="text" className="form-control" name=""/*  onChange={(e) => this.handleFieldChange(e, 'emailFrom')} */
+                                        placeholder="CustomeName" required /* value={emailFrom || ''}  *//>
+                            <label>You must provide a name to the customer.</label>
+                            <Tabs defaultActiveKey="1" onChange={() => this.callback()}>
+                                <TabPane tab="Basic Information" key="1">
+                                    <BasicInfo />
+                                </TabPane>
+                                <TabPane tab="Billing Information" key="2"><BillingInfo /></TabPane>
+                                <TabPane tab="Shipping Inforamtion" key="3"><ShippingInfo /></TabPane>
+                            </Tabs>
+                        </div>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={() => this.handleClose()}>Close</Button>
+                        <Button onClick={() => this.handleClose()}>Add Customer</Button>
+                    </DialogActions>
+                </Dialog>
                 <div className="col-6 col-sm-6 p-2 pr-1">
                     <div className="left" style={{ background: 'rgb(240, 242, 245)', height: '100%' }}>
                         <div className="container" style={{ height: "100%" }}>
@@ -43,7 +101,7 @@ class Sales extends React.Component {
                                         <Option value="tom">Tom</Option>
                                     </Select>
                                     <Button.Group>
-                                        <Button>
+                                        <Button onClick={() => this.onAddCustomer()}>
                                             <i className="fa fa-user"></i>
                                             Add Customer
                                         </Button>

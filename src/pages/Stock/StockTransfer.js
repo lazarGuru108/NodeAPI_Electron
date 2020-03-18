@@ -19,12 +19,12 @@ const initData = {
     gtin:'', 
     address: '', 
     city: '', 
-    state: '', 
+    status: '', 
+    from: 'Store 01',
     country: '', 
     storeSelect: true, 
     stores: [], 
     detail: '', 
-    status: 'Active', 
     order: ''
 };
 

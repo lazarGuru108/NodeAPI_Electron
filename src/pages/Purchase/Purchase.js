@@ -5,7 +5,7 @@ import './Purchase.scss';
 import { connect } from 'react-redux';
 import { getAllUsers } from '../../store/actions/userAction';
 import { getAllSales } from '../../store/actions/saleAction';
-import { Collapse, Select, Icon } from 'antd';
+import { Collapse, Icon } from 'antd';
 import EditForm from './AddPurchase/EditForm';
 import TableView from './PurchaseList/TableView';
 import testData from './testData.json';
@@ -64,7 +64,7 @@ class Purchase extends React.Component {
         let newDataSource = [];
         if(selectedSupply > -1) {
             for(let i = 0; i<dataSource.length; i++) {
-                if(dataSource[i].key == selectedSupply) {
+                if(dataSource[i].key === selectedSupply) {
                     console.log(data, selectedSupply);
                     newDataSource.push({...data, key: selectedSupply});
                 }else{

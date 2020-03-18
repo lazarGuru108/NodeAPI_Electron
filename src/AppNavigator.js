@@ -23,6 +23,10 @@ import ManageUsers from './pages/Users/ManageUsers.js';
 import ManageStores from './pages/Stores/ManageStores.js';
 import Analytics from './pages/Analytics/Analytics.js';
 import StockTransfer from './pages/Stock/StockTransfer.js';
+import SendEmail from './pages/SendEmail/SendEmail.js';
+import Appointment from './pages/Appointment/Appointment.js';
+import '../src/assets/styles/main.scss';
+import ManageRole from './pages/ManageRole/ManageRole.js';
 
 const { Sider, Content } = Layout;
 
@@ -122,11 +126,11 @@ class AppNavigator extends React.Component {
         <Switch>
           <Route path={routes.HOME} exact component={HomePage} />
           <AdminLayout id="admin">
-            <Sider id="sidebar" trigger={null} collapsible collapsed={this.state.collapsed} width={250}>
+            <Sider id="sidebar" /**/trigger={null}  collapsible  collapsed={this.state.collapsed} width={250}>
               <Sidebar handleMenu={this.handleMenu} param={this.state.sidebarParams} onOpenChange={this.onOpenChange} />
             </Sider>
-            <Layout>
-              <MainHeader toggle={this.toggle} />
+            <Layout className="layout">
+              <MainHeader toggle={() => this.toggle()} />
               <ContentHeader title={this.state.title} subTitle={this.state.subTitle} />
               <Content className="content">
                 <Route path={routes.DASHBOARD} exact component={DashboardPage} />
@@ -138,6 +142,9 @@ class AppNavigator extends React.Component {
                 <Route path={routes.MANAGESTORES} exact component={ManageStores} />
                 <Route path={routes.ANALYTICS} exact component={Analytics} />
                 <Route path={routes.STOCKTRANSFER} exact component={StockTransfer} />
+                <Route path={routes.SENDEMAIL} exact component={SendEmail} />
+                <Route path={routes.APPOINTMENT} exact component={Appointment} />
+                <Route path={routes.MANAGEROLE} exact component={ManageRole} />
               </Content>
               <MainFooter />
             </Layout>

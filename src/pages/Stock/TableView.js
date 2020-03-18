@@ -17,6 +17,38 @@ class TableView extends React.Component {
     constructor(props) {
         super(props);
         /**For Table */
+        this.printColumns = [
+            {
+                title: 'Date',
+                dataIndex: 'createdAt',
+                width: '15%'
+            },
+            {
+                title: 'Ref. No.',
+                dataIndex: 'refNo',
+                width: '10%'
+            },
+            {
+                title: 'From Store',
+                dataIndex: 'from',
+                width: '15%'
+            },
+            {
+                title: 'To Store',
+                dataIndex: 'toStore',
+                width: '15%'
+            },
+            {
+                title: 'Total Item',
+                dataIndex: 'totalItem',
+                width: '15%'
+            },
+            {
+                title: 'Total Quantity',
+                dataIndex: 'totalQuantity',
+                width: '15%'
+            }
+        ]
         this.columns = [
             {
                 title: 'Date',
@@ -27,16 +59,16 @@ class TableView extends React.Component {
             },
             {
                 title: 'Ref. No.',
-                dataIndex: 'refno',
+                dataIndex: 'refNo',
                 width: '10%',
                 defaultSortOrder: 'ascend',
-                sorter: (a, b) => a.refno - b.refno,
+                sorter: (a, b) => a.refNo - b.refNo,
             },
             {
                 title: 'From Store',
-                dataIndex: 'fromStore',
+                dataIndex: 'from',
                 width: '15%',
-                sorter: (a, b) => a.fromStore > b.fromStore,
+                sorter: (a, b) => a.from > b.from,
                 editable: false,
             },
             {
@@ -177,6 +209,7 @@ class TableView extends React.Component {
                 cell: EditableCell,
             },
         }; */
+        const printColumns = this.printColumns;
         const columns = this.columns.map(col => {
             if (!col.editable) {
                 return col;
@@ -200,7 +233,7 @@ class TableView extends React.Component {
                             <label style={{ padding: '5px 5px 0 15px' }}>Show</label>
                             <Select
                                 showSearch
-                                style={{ width: 200 }}
+                                style={{ width: '50%' }}
                                 optionFilterProp="children"
                                 defaultValue="10"
                                 filterOption={(input, option) => option.props.children.indexOf(input) >= 0}
@@ -251,11 +284,11 @@ class TableView extends React.Component {
                     <div className="col-m-4 col-4">
                         <div className="row" style={{ padding: '0px 0px 0px 217px' }}>
                             <label style={{ padding: '5px 15px 0 15px' }}>Search</label>
-                            <Input type="text" style={{ padding: '5px', width: '200px' }} placeholder="Search ..." value={searchText} onChange={(e) => this.searchRows(e)} />
+                            <Input type="text" style={{ padding: '5px', width: '70%' }} placeholder="Search ..." value={searchText} onChange={(e) => this.searchRows(e)} />
                         </div>
                     </div>
                 </div>
-                <br></br>
+                <br/><br/>
                 <Table
                     // components={components}
                     // rowClassName={() => 'editable-row'}
@@ -264,6 +297,14 @@ class TableView extends React.Component {
                     columns={columns}
                     pagination={{ pageSize: this.state.pageSize }}
                     ref={el => (this.componentRef = el)}
+                />
+                <Table
+                    className="print-source"
+                    bordered
+                    ref={el => (this.componentRef = el)}
+                    dataSource={!searchText ? dataSource : tempDataSource}
+                    columns={printColumns}
+                    pagination={false}
                 />
             </div>
         );

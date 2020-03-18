@@ -1,0 +1,121 @@
+#sendemail {
+  /**
+      Content
+      */
+  //   min-height: 100%;
+  padding: 20px 10px 20px 10px;
+  width: 600px;
+  //   height: 400px;
+  border-radius: 5px;
+  // border: 2px solid #f0f2f5;
+  border-radius: 20px;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  //new
+  background-color: #2d2c2cbd;
+  color: white;
+
+  .form-title {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+    color: #40a9ff;
+    /* position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 5px;
+    top: -15px;
+    left: 50px; */
+  }
+
+  .title {
+    text-align: right;
+    justify-content: center;
+    justify-items: flex-end;
+  }
+  label .required {
+    color: #f9264c;
+    font-style: normal;
+    margin-left: 3px;
+  }
+  .email-form {
+    justify-content: center;
+    align-items: center;
+    border-width: 1px;
+    border-color: red;
+  }
+  .form-group {
+    // padding: 10px;
+    width: 500px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+  .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+
+  .file-preview {
+    margin: 0 10px;
+  }
+
+  //new
+  .form-control {
+    border-radius: 15px;
+  }
+  .ant-select-selection--single {
+    border-radius: 20px !important;
+    padding-left: 10px;
+  }
+  .custom-file-upload {
+    border-radius: 15px;
+  }
+  .ant-btn {
+    border-radius: 15px;
+  }
+
+  ::placeholder {
+    opacity: 0.5!important;
+  }
+  /* 
+  @supports (not (-ms-ime-align: auto)) {
+    input{
+      width: 100%;
+      transition: all 0.3s;
+      border-radius: 20px;
+    }
+    label {
+      color: #999;
+      transform: translate(0.5rem, -1.6rem);
+      transition: all 0.2s ease-out;
+      // transition: color 0.3s, top 0.3s, background-color 0.8s;
+    }
+    label:hover {
+      cursor: text;
+    }
+
+    input:focus + label,
+    input:not(:placeholder-shown) + label {
+      color: #111;
+      transform: translate(0, -2.75rem);
+      background-color: white;
+      border-radius: 20px;
+      padding: 1px 5px;
+    }
+    label:active
+    // input:not(:placeholder-shown) + label 
+    {
+      color: #111;
+      // transform: translate(0, -2.75rem);
+      top: -11px;
+      background-color: white;
+      border-radius: 20px;
+      padding: 1px 5px;
+    }
+  } */
+}

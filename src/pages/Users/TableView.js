@@ -17,6 +17,38 @@ class TableView extends React.Component {
     constructor(props) {
         super(props);
         /**For Table */
+        this.printColumns = [
+            {
+                title: 'Id',
+                dataIndex: 'id',
+                width: '5%'
+            },
+            {
+                title: 'Name',
+                dataIndex: 'uname',
+                width: '15%'
+            },
+            {
+                title: 'Email',
+                dataIndex: 'email',
+                width: '15%'
+            },
+            {
+                title: 'Mobile',
+                dataIndex: 'mobile',
+                width: '15%'
+            },
+            {
+                title: 'Group',
+                dataIndex: 'group',
+                width: '15%'
+            },
+            {
+                title: 'Created At',
+                dataIndex: 'createdAt',
+                width: '20%'
+            }
+        ]
         this.columns = [
             {
                 title: 'Id',
@@ -183,6 +215,7 @@ class TableView extends React.Component {
     render() {
         const { dataSource, searchText, tempDataSource } = this.state;
         
+        const printColumns = this.printColumns;
         const columns = this.columns.map(col => {
             if (!col.editable) {
                 return col;
@@ -205,7 +238,7 @@ class TableView extends React.Component {
                             <label style={{ padding: '5px 5px 0 15px' }}>Show</label>
                             <Select
                                 showSearch
-                                style={{ width: 200 }}
+                                style={{ width: '50%' }}
                                 optionFilterProp="children"
                                 defaultValue="10"
                                 filterOption={(input, option) => option.props.children.indexOf(input) >= 0}
@@ -256,17 +289,24 @@ class TableView extends React.Component {
                     <div className="col-m-4 col-4">
                         <div className="row" style={{ padding: '0px 0px 0px 217px' }}>
                             <label style={{ padding: '5px 15px 0 15px' }}>Search</label>
-                            <Input type="text" style={{ padding: '5px', width: '200px' }} placeholder="Search ..." value={searchText} onChange={(e) => this.searchRows(e)} />
+                            <Input type="text" style={{ padding: '5px', width: '70%' }} placeholder="Search ..." value={searchText} onChange={(e) => this.searchRows(e)} />
                         </div>
                     </div>
                 </div>
-                <br></br>
+                <br/><br/>
                 <Table
                     bordered
                     dataSource={!searchText ? dataSource : tempDataSource}
                     columns={columns}
                     pagination={{ pageSize: this.state.pageSize }}
+                />
+                <Table
+                    className="print-source"
+                    bordered
                     ref={el => (this.componentRef = el)}
+                    dataSource={!searchText ? dataSource : tempDataSource}
+                    columns={printColumns}
+                    pagination={false}
                 />
             </div>
         );

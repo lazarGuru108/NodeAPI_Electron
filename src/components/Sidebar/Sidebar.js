@@ -67,9 +67,9 @@ class Sidebar extends React.Component {
                             {param.isOnline ? 'Online' : 'Offline'}</a>
                     </div>
                 </div>
-                <Menu theme="dark" className="sidebar-menu" mode="inline" 
-                selectedKeys={param.selectedKeys} openKeys={param.openKeys} onOpenChange={this.onOpenChange} subMenuCloseDelay='12' subMenuOpenDelay={5000} forceSubMenuRender={true}
-                    onClick={this.handleMenu}>
+                <Menu theme="dark" className="sidebar-menu" mode="inline"
+                selectedKeys={param.selectedKeys} openKeys={param.openKeys} onOpenChange={(e) => this.onOpenChange(e)} subMenuCloseDelay='12' subMenuOpenDelay={5000}/*  forceSubMenuRender={true} */
+                    onClick={(e) => this.handleMenu(e)}>
                     {
                         menuData.menus.map((menu, pKey) => (
                             menu.hasChild === false ?

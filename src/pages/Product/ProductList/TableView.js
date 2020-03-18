@@ -8,6 +8,7 @@ import "jspdf-autotable";
 import ReactToPrint from "react-to-print";
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import '../Product.scss';
 import noImage from '../../../assets/images/noimage.jpg'
 
@@ -106,6 +107,46 @@ class TableView extends React.Component {
     constructor(props) {
         super(props);
         /**For Table */
+        this.printColumns = [
+            {
+                title: '',
+                dataIndex: 'checkbox',
+                width: '5%',
+            },
+            {
+                title: 'Iamge',
+                dataIndex: 'image',
+                width: '5%'
+            },
+            {
+                title: 'P.Code',
+                dataIndex: 'pcode',
+                width: '10%'
+            },
+            {
+                title: 'Name',
+                dataIndex: 'uname',
+                width: '10%'
+            },
+            {
+                title: 'Supplier',
+                dataIndex: 'supplier',
+                width: '15%'
+            },
+            {
+                title: 'Stock',
+                dataIndex: 'stock',
+                width: '10%'
+            },
+            {
+                title: 'Purchase Price',
+                dataIndex: 'purchaseprice'
+            },
+            {
+                title: 'Selling Price',
+                dataIndex: 'sellingprice'
+            }
+        ]
         this.columns = [
             {
                 title: '',
@@ -320,6 +361,7 @@ class TableView extends React.Component {
                 cell: EditableCell,
             },
         };
+        const printColumns = this.printColumns;
         const columns = this.columns.map(col => {
             if (!col.editable) {
                 return col;
@@ -343,7 +385,7 @@ class TableView extends React.Component {
                             <label style={{ padding: '5px 5px 0 15px' }}>Show</label>
                             <Select
                                 showSearch
-                                style={{ width: 200 }}
+                                style={{ width: '50%' }}
                                 optionFilterProp="children"
                                 defaultValue="10"
                                 filterOption={(input, option) => option.props.children.indexOf(input) >= 0}
@@ -367,9 +409,15 @@ class TableView extends React.Component {
                                     </Button>}
                                     content={() => this.componentRef}
                                 />
-                                <Button type="normal" size="small" title="copy">
-                                    <i className="fa fa-files-o"></i>
-                                </Button>
+                                {/* <Button type="normal" size="small" title="print">
+                                    <i className="fa fa-print"></i>
+                                </Button> */}
+                                <CopyToClipboard text={JSON.stringify(this.state.dataSource)}>
+                                    <Button type="normal" size="small" title="copy">
+                                        <i className="fa fa-files-o"></i>
+                                    </Button>
+                                </CopyToClipboard>
+
                                 <Button type="normal" size="small" title="Excel" onClick={this.exportToCSV}>
                                     <i className="fa fa-file-excel-o"></i>
                                 </Button>
@@ -388,10 +436,11 @@ class TableView extends React.Component {
                     <div className="col-m-4 col-4">
                         <div className="row" style={{ padding: '0px 0px 0px 217px' }}>
                             <label style={{ padding: '5px 15px 0 15px' }}>Search</label>
-                            <Input type="text" style={{ padding: '5px', width: '200px' }} placeholder="Search ..." value={searchText} onChange={(e) => this.searchRows(e)} />
+                            <Input type="text" style={{ padding: '5px', width: '70%' }} placeholder="Search ..." value={searchText} onChange={(e) => this.searchRows(e)} />
                         </div>
                     </div>
                 </div>
+                <br/><br/>
                 <Table
                     components={components}
                     rowClassName={() => 'editable-row'}
@@ -400,6 +449,14 @@ class TableView extends React.Component {
                     columns={columns}
                     pagination={{ pageSize: this.state.pageSize }}
                     ref={el => (this.componentRef = el)}
+                />
+                <Table
+                    className="print-source"
+                    bordered
+                    ref={el => (this.componentRef = el)}
+                    dataSource={!searchText ? dataSource : tempDataSource}
+                    columns={printColumns}
+                    pagination={false}
                 />
             </div>
         );

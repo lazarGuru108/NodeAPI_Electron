@@ -79,7 +79,7 @@ class Analytics extends Component {
                     <div className="thirdContent">
                         <div className="col-md-6 col-12 col-sm-12">
                             <Tabs defaultActiveKey="1" onChange={() => this.callback}>
-                                <TabPane tab="His birthday is today" key="1">
+                                <TabPane tab="His birthday is today" key="birthday">
                                     <TableView />
                                 </TabPane>
                             </Tabs>
@@ -87,7 +87,7 @@ class Analytics extends Component {
                         <div className="col-md-6 col-12 col-sm-12">
                             <div id="best-customer" className="small-box best-customer" style={{boxShadow:"none"}}>
                                 <div className="inner">
-                                    <h3 className="title">
+                                    <h3 className="title" style={{textAlign: 'center'}}>
                                         <font style={{verticalAlign: "inherit"}}>
                                             <font style={{verticalAlign: "inherit"}}>
                                                 Best customer                  
@@ -95,7 +95,7 @@ class Analytics extends Component {
                                         </font>
                                     </h3>
                                     <span className="name">
-                                        <Link >
+                                        <Link to="" >
                                             <font style={{verticalAlign: "inherit"}}>
                                                 <font style={{verticalAlign: "inherit", color: "#3c8dbc"}}>
                                                     Walking Customer                      

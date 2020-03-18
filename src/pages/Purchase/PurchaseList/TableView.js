@@ -19,6 +19,40 @@ class TableView extends React.Component {
     constructor(props) {
         super(props);
         /**For Table */
+        this.printColumns = [
+            {
+                title: 'DateTime',
+                dataIndex: 'datetime',
+                width: '15%'
+            },
+            {
+                title: 'Invoice Id',
+                dataIndex: 'invoiceid',
+                width: '15%'
+            },
+            {
+                title: 'Supplier',
+                dataIndex: 'supplier',
+                width: '30%'
+            },
+            {
+                title: 'Creator',
+                dataIndex: 'creator',
+                width: '20%'
+            },
+            {
+                title: 'Amount',
+                dataIndex: 'amount'
+            },
+            {
+                title: 'Paid Amount',
+                dataIndex: 'paidamount'
+            },
+            {
+                title: 'Due',
+                dataIndex: 'due'
+            }
+        ];
         this.columns = [
             {
                 title: 'DateTime',
@@ -199,6 +233,7 @@ class TableView extends React.Component {
 
     render() {
         const { dataSource, searchText, tempDataSource } = this.state;
+        const printColumns = this.printColumns;
         const columns = this.columns.map(col => {
             if (!col.editable) {
                 return col;
@@ -282,6 +317,14 @@ class TableView extends React.Component {
                     columns={columns}
                     pagination={{ pageSize: this.state.pageSize }}
                     ref={el => (this.componentRef = el)}
+                />
+                <Table
+                    className="print-source"
+                    bordered
+                    ref={el => (this.componentRef = el)}
+                    dataSource={!searchText ? dataSource : tempDataSource}
+                    columns={printColumns}
+                    pagination={false}
                 />
             </div>
         );

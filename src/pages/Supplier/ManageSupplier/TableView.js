@@ -106,6 +106,34 @@ class TableView extends React.Component {
     constructor(props) {
         super(props);
         /**For Table */
+        this.printColumns = [
+            {
+                title: 'Id',
+                dataIndex: 'id',
+                width: '5%',
+                
+            },
+            {
+                title: 'Name',
+                dataIndex: 'uname',
+                width: '20%',
+            },
+            {
+                title: 'Mobile',
+                dataIndex: 'mobile',
+                width: '30%',
+            },
+            {
+                title: 'Product',
+                dataIndex: 'product',
+                width: '20%',
+            },
+            {
+                title: 'Created At',
+                dataIndex: 'createdAt',
+                width: '20%',
+            }
+        ];
         this.columns = [
             {
                 title: 'Id',
@@ -281,6 +309,7 @@ class TableView extends React.Component {
                 cell: EditableCell,
             },
         };
+        const printColumns = this.printColumns;
         const columns = this.columns.map(col => {
             if (!col.editable) {
                 return col;
@@ -304,7 +333,7 @@ class TableView extends React.Component {
                             <label style={{ padding: '5px 5px 0 15px' }}>Show</label>
                             <Select
                                 showSearch
-                                style={{ width: 200 }}
+                                style={{ width: '50%' }}
                                 optionFilterProp="children"
                                 defaultValue="10"
                                 filterOption={(input, option) => option.props.children.indexOf(input) >= 0}
@@ -328,9 +357,6 @@ class TableView extends React.Component {
                                     </Button>}
                                     content={() => this.componentRef}
                                 />
-                                {/* <Button type="normal" size="small" title="print">
-                                    <i className="fa fa-print"></i>
-                                </Button> */}
                                 <CopyToClipboard text={JSON.stringify(this.state.dataSource)}>
                                     <Button type="normal" size="small" title="copy">
                                         <i className="fa fa-files-o"></i>
@@ -355,11 +381,11 @@ class TableView extends React.Component {
                     <div className="col-m-4 col-4">
                         <div className="row" style={{ padding: '0px 0px 0px 217px' }}>
                             <label style={{ padding: '5px 15px 0 15px' }}>Search</label>
-                            <Input type="text" style={{ padding: '5px', width: '200px' }} placeholder="Search ..." value={searchText} onChange={(e) => this.searchRows(e)} />
+                            <Input type="text" style={{ padding: '5px', width: '70%' }} placeholder="Search ..." value={searchText} onChange={(e) => this.searchRows(e)} />
                         </div>
                     </div>
                 </div>
-                <br></br>
+                <br/><br/>
                 <Table
                     components={components}
                     rowClassName={() => 'editable-row'}
@@ -367,7 +393,17 @@ class TableView extends React.Component {
                     dataSource={!searchText ? dataSource : tempDataSource}
                     columns={columns}
                     pagination={{ pageSize: this.state.pageSize }}
+                    // ref={el => (this.componentRef = el)}
+                />
+                <Table
+                    className="print-source"
+                    components={components}
+                    rowClassName={() => 'editable-row'}
+                    bordered
                     ref={el => (this.componentRef = el)}
+                    dataSource={!searchText ? dataSource : tempDataSource}
+                    columns={printColumns}
+                    pagination={false}
                 />
             </div>
         );

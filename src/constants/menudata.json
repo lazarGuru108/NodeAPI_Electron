@@ -16,58 +16,18 @@
                     "title": "New Sale",
                     "url": "SALES",
                     "icon": "shopping"
-                },
-                {
-                    "title": "Manage Sale",
-                    "url": "SALES",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "SALES",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "SALES",
-                    "icon": null
                 }
             ]
         },
         {
-            "title": "Customer",
+            "title": "Send Email", 
             "hasChild": true,
-            "icon": "customer-service",
+            "icon": "mail",
             "children": [
                 {
-                    "title": "Add Customer",
-                    "url": "DASHBOARD",
+                    "title": "Send Email",
+                    "url": "SENDEMAIL",
                     "icon": "shopping"
-                },
-                {
-                    "title": "Manage Customer",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "Customer Ledger",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "Credit Customer",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "Paid Customer",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "Customer Advance",
-                    "url": "DASHBOARD",
-                    "icon": null
                 }
             ]
         },
@@ -76,26 +36,6 @@
             "hasChild": true,
             "icon": "shop",
             "children": [
-                {
-                    "title": "Category",
-                    "url": "PRODUCT",
-                    "icon": "shopping"
-                },
-                {
-                    "title": "Unit",
-                    "url": "PRODUCT",
-                    "icon": null
-                },
-                {
-                    "title": "Add Product",
-                    "url": "PRODUCT",
-                    "icon": null
-                },
-                {
-                    "title": "Import product(CSV)",
-                    "url": "PRODUCT",
-                    "icon": null
-                },
                 {
                     "title": "Manage Product",
                     "url": "PRODUCT",
@@ -109,22 +49,7 @@
             "icon": "user",
             "children": [
                 {
-                    "title": "AddSupplier",
-                    "url": "MANAGESUPPLIER",
-                    "icon": null
-                },
-                {
                     "title": "Manage Supplier",
-                    "url": "MANAGESUPPLIER",
-                    "icon": null
-                },
-                {
-                    "title": "Supplier Ledger",
-                    "url": "MANAGESUPPLIER",
-                    "icon": null
-                },
-                {
-                    "title": "Supplier Advance",
                     "url": "MANAGESUPPLIER",
                     "icon": null
                 }
@@ -136,22 +61,7 @@
             "icon": "shopping-cart",
             "children": [
                 {
-                    "title": "New Sale",
-                    "url": "PURCHASE",
-                    "icon": "shopping"
-                },
-                {
                     "title": "Manage Sale",
-                    "url": "PURCHASE",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "PURCHASE",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
                     "url": "PURCHASE",
                     "icon": null
                 }
@@ -166,227 +76,30 @@
                     "title": "Stock Transfer",
                     "url": "STOCKTRANSFER",
                     "icon": "shopping"
-                },
-                {
-                    "title": "Stock Transfer",
-                    "url": "STOCKTRANSFER",
-                    "icon": "shopping"
                 }
             ]
         },
         {
-            "title": "Return",
+            "title": "Appointment",
             "hasChild": true,
             "icon": "pull-request",
             "children": [
                 {
-                    "title": "New Sale",
-                    "url": "DASHBOARD",
+                    "title": "Appointment",
+                    "url": "APPOINTMENT",
                     "icon": "shopping"
-                },
-                {
-                    "title": "Manage Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "DASHBOARD",
-                    "icon": null
                 }
             ]
         },
         {
-            "title": "Report",
+            "title": "Manage Role",
             "hasChild": true,
-            "icon": "book",
+            "icon": "key",
             "children": [
                 {
-                    "title": "New Sale",
-                    "url": "DASHBOARD",
+                    "title": "Manage Role",
+                    "url": "MANAGEROLE",
                     "icon": "shopping"
-                },
-                {
-                    "title": "Manage Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "DASHBOARD",
-                    "icon": null
-                }
-            ]
-        },
-        {
-            "title": "Accounts",
-            "hasChild": true,
-            "icon": "account-book",
-            "children": [
-                {
-                    "title": "New Sale",
-                    "url": "DASHBOARD",
-                    "icon": "shopping"
-                },
-                {
-                    "title": "Manage Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "DASHBOARD",
-                    "icon": null
-                }
-            ]
-        },
-        {
-            "title": "Bank",
-            "hasChild": true,
-            "icon": "bank",
-            "children": [
-                {
-                    "title": "New Sale",
-                    "url": "DASHBOARD",
-                    "icon": "shopping"
-                },
-                {
-                    "title": "Manage Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "DASHBOARD",
-                    "icon": null
-                }
-            ]
-        },
-        {
-            "title": "Tax",
-            "hasChild": true,
-            "icon": "money-collect",
-            "children": [
-                {
-                    "title": "New Sale",
-                    "url": "DASHBOARD",
-                    "icon": "shopping"
-                },
-                {
-                    "title": "Manage Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "DASHBOARD",
-                    "icon": null
-                }
-            ]
-        },
-        {
-            "title": "Human Resource",
-            "hasChild": true,
-            "icon": "team",
-            "children": [
-                {
-                    "title": "New Sale",
-                    "url": "DASHBOARD",
-                    "icon": "shopping"
-                },
-                {
-                    "title": "Manage Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "DASHBOARD",
-                    "icon": null
-                }
-            ]
-        },
-        {
-            "title": "Service",
-            "hasChild": true,
-            "icon": "transaction",
-            "children": [
-                {
-                    "title": "New Sale",
-                    "url": "DASHBOARD",
-                    "icon": "shopping"
-                },
-                {
-                    "title": "Manage Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "DASHBOARD",
-                    "icon": null
-                }
-            ]
-        },
-        {
-            "title": "Commission",
-            "hasChild": true,
-            "icon": "appstore",
-            "children": [
-                {
-                    "title": "New Sale",
-                    "url": "DASHBOARD",
-                    "icon": "shopping"
-                },
-                {
-                    "title": "Manage Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "POS Sale",
-                    "url": "DASHBOARD",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "DASHBOARD",
-                    "icon": null
                 }
             ]
         },
@@ -408,11 +121,6 @@
                 {
                     "title": "Analytics",
                     "url": "ANALYTICS",
-                    "icon": null
-                },
-                {
-                    "title": "GUI POS",
-                    "url": "HOME",
                     "icon": null
                 }
             ]

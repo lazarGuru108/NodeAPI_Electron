@@ -1,6 +1,6 @@
 #header {
   min-height: 60px;
-  border-bottom: 1px solid #e1e6ef;
+  // border-bottom: 1px solid #e1e6ef;
   .trigger {
     font-size: 26px;
     cursor: pointer;
@@ -13,8 +13,8 @@
     background-image: none;
     padding: 16px 14px;
     font-family: fontAwesome;
-    border-right: 1px solid #e1e6ef;
-    color: #374767;
+    // border-right: 1px solid #e1e6ef;
+    color: #fff;
     font-size: 26px;
     line-height: 26px;
   }
@@ -99,17 +99,17 @@
     cursor: pointer;
     transition: color 0.3s;
     a>i {
-      border: 1px solid #f2f2f2;
+      // border: 1px solid #f2f2f2;
       padding: 6px 3px;
       width: 36px;
       text-align: center;
-      color: #374767;
-      background-color: #f5f5f5;
+      color: white;
+      background-color: #f5f5f500;
       height: 36px;
       font-size: 25px;
     }
     .label {
-      border: 2px solid #fff;
+      // border: 2px solid #fff;
       position: absolute;
       top: -10px;
       right: -8px;
@@ -119,5 +119,8 @@
       height: 22px;
       width: 22px;
     }
+  }
+  .btn.btn.btn-success.btn-outline{
+    background-color: #28a74533!important;
   }
 }

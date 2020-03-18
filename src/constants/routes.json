@@ -10,6 +10,9 @@
     "MANAGEUSERS": "/manageusers",
     "MANAGESTORES": "/managestores",
     "ANALYTICS": "/analytics",
-    "STOCKTRANSFER": "/stocktransfer"
+    "STOCKTRANSFER": "/stocktransfer",
+    "SENDEMAIL": "/sendemail",
+    "APPOINTMENT": "/appointment",
+    "MANAGEROLE": "/manage_role"
   }
   
