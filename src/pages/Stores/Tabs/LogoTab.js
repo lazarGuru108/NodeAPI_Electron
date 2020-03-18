@@ -47,9 +47,9 @@ class EmailTab extends React.Component {
                 <div className="container-fluid" id="LogoTab">
                     <div className="between"></div>
                     <div className="titleContainer">
-                        <label className="title">Logo</label>
+                        <label className="title" style={{color:"#555"}}>Logo</label>
                     </div>
-                    <div className="group">
+                    <div className="group" style={{backgroundColor:"#fafafa"}}>
                         <div className="row">
                             <div className="col-md-3 col-12 col-sm-12"></div>
                             <div className="col-md-2 col-12 col-sm-12" style={{
@@ -67,7 +67,7 @@ class EmailTab extends React.Component {
                             <div className="col-md-5 col-12 col-sm-12" >
                                 <div className="upload-field">
                                     <input className="file-field" type="file" name="file" id="file" required="" onChange={(e) => this.onSelect(e,'logoFile')} />
-                                    <button type="submit" className="btn btn-sm btn-warning btn-logo-upload" data-loading-text="Uploading..." onClick={() => this.uploadLogo()}>
+                                    <button type="submit" className="btn btn-sm btn-warning btn-logo-upload form-btn" data-loading-text="Uploading..." onClick={() => this.uploadLogo()}>
                                         <span className="fa fa-fw fa-upload"></span>
                                         Upload
                                     </button>
@@ -78,9 +78,9 @@ class EmailTab extends React.Component {
                     </div>
                     <div className="between"></div>
                     <div className="titleContainer">
-                        <label className="title">Background</label>
+                        <label className="title" style={{color:"#555"}}>Background</label>
                     </div>
-                    <div className="group">
+                    <div className="group" style={{backgroundColor:"#fafafa"}}>
                         <div className="row">
                             <div className="col-md-3 col-12 col-sm-12"></div>
                             <div className="col-md-2 col-12 col-sm-12" style={{
@@ -98,7 +98,7 @@ class EmailTab extends React.Component {
                             <div className="col-md-5 col-12 col-sm-12" >
                                 <div className="upload-field">
                                     <input className="file-field" type="file" name="file" id="file" required=""  onChange={(e) => this.onSelect(e,'backgroundFile')} />
-                                    <button type="submit" className="btn btn-sm btn-warning btn-logo-upload" data-loading-text="Uploading...">
+                                    <button type="submit" className="btn btn-sm btn-warning btn-logo-upload form-btn" data-loading-text="Uploading...">
                                         <span className="fa fa-fw fa-upload"></span>
                                         Upload
                                     </button>

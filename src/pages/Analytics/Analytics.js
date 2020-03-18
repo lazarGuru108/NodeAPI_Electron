@@ -22,20 +22,23 @@ class Analytics extends Component {
     render() {
         return (
             <div className="container-fluid" id="analytics">
-                <div className="row chart">
-                    <div className="col-md-3 col-12 col-sm-12 piechartContainer" >
-                        <PieChart title="Top Products" />
+                {/* <div className="container-fluid"> */}
+                    <div className="row chart">
+                        <div className="col-lg-3 col-md-6 col-12 col-sm-12 piechartContainer" >
+                            <PieChart title="Top Products" />
+                        </div>
+                        <div className="col-lg-3 col-md-6 col-12 col-sm-12 piechartContainer" >
+                            <PieChart title="Top Customers" />
+                        </div>
+                        <div className="col-lg-3 col-md-6 col-12 col-sm-12 piechartContainer" >
+                            <PieChart title="Top Suppliers" />
+                        </div>
+                        <div className="col-lg-3 col-md-6 col-12 col-sm-12 piechartContainer" >
+                            <PieChart title="Top Brands" />
+                        </div>
                     </div>
-                    <div className="col-md-3 col-12 col-sm-12 piechartContainer" >
-                        <PieChart title="Top Customers" />
-                    </div>
-                    <div className="col-md-3 col-12 col-sm-12 piechartContainer" >
-                        <PieChart title="Top Suppliers" />
-                    </div>
-                    <div className="col-md-3 col-12 col-sm-12 piechartContainer" >
-                        <PieChart title="Top Brands" />
-                    </div>
-                </div>
+                {/* </div> */}
+
                 <div className="row secondRow">
                     <div className="col-md-6 col-12 col-sm-12">
                         <Table responsive="md" bordered hover>
@@ -68,7 +71,7 @@ class Analytics extends Component {
                             </tbody>
                         </Table>
                     </div>
-                    <div className="col-md-6 col-12 col-sm-12" >
+                    <div className="col-lg-6 col-md-12 col-12 col-sm-12 barchart-container" >
                         <BarChart />
                     </div>
                 </div>
@@ -85,49 +88,49 @@ class Analytics extends Component {
                             </Tabs>
                         </div>
                         <div className="col-md-6 col-12 col-sm-12">
-                            <div id="best-customer" className="small-box best-customer" style={{boxShadow:"none"}}>
+                            <div id="best-customer" className="small-box best-customer" style={{ boxShadow: "none" }}>
                                 <div className="inner">
-                                    <h3 className="title" style={{textAlign: 'center'}}>
-                                        <font style={{verticalAlign: "inherit"}}>
-                                            <font style={{verticalAlign: "inherit"}}>
-                                                Best customer                  
+                                    <h3 className="title" style={{ textAlign: 'center' }}>
+                                        <font style={{ verticalAlign: "inherit" }}>
+                                            <font style={{ verticalAlign: "inherit" }}>
+                                                Best customer
                                             </font>
                                         </font>
                                     </h3>
                                     <span className="name">
                                         <Link to="" >
-                                            <font style={{verticalAlign: "inherit"}}>
-                                                <font style={{verticalAlign: "inherit", color: "#3c8dbc"}}>
-                                                    Walking Customer                      
+                                            <font style={{ verticalAlign: "inherit" }}>
+                                                <font style={{ verticalAlign: "inherit", color: "#3c8dbc" }}>
+                                                    Walking Customer
                                                 </font>
                                             </font>
                                         </Link>
                                     </span>
                                     <div className="amount">
-                                        <font style={{verticalAlign: "inherit"}}>
-                                            <font style={{verticalAlign: "inherit"}}>
+                                        <font style={{ verticalAlign: "inherit" }}>
+                                            <font style={{ verticalAlign: "inherit" }}>
                                                 Buy
                                             </font>
                                         </font>
                                         <strong>
-                                            <font style={{verticalAlign: "inherit"}}>
-                                                <font style={{verticalAlign: "inherit"}}>$ 67,940.50</font>
+                                            <font style={{ verticalAlign: "inherit" }}>
+                                                <font style={{ verticalAlign: "inherit" }}>$ 67,940.50</font>
                                             </font>
-                                        </strong>                 
+                                        </strong>
                                     </div>
                                     <div className="contact">
-                                        <i><font style={{verticalAlign: "inherit"}}><font style={{verticalAlign: "inherit"}}>Mobile: 0170000000000</font></font></i>
+                                        <i><font style={{ verticalAlign: "inherit" }}><font style={{ verticalAlign: "inherit" }}>Mobile: 0170000000000</font></font></i>
                                     </div>
                                     <div className="contact">
-                                        <i><font style={{verticalAlign: "inherit"}}><font style={{verticalAlign: "inherit"}}>Email: wc@itsolution24.com</font></font></i>
+                                        <i><font style={{ verticalAlign: "inherit" }}><font style={{ verticalAlign: "inherit" }}>Email: wc@itsolution24.com</font></font></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="row chart">
-                    <div style={{padding: "10px" }}>
+                <div className="row col-chart">
+                    <div style={{ padding: "10px" }}>
                         <ColumnChart />
                     </div>
                 </div>

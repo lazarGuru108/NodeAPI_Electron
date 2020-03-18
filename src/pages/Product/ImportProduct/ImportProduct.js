@@ -13,14 +13,14 @@ class ImportProduct extends React.Component {
                 </div>
                 <div style={{padding: "15px"}}>
                     <div className="row" style={{padding: "4px", justifyContent: "center"}}>
-                        <span>Download Sample Format File <a href="#"><span style={{color: "rgb(60, 141, 188)"}}><i className="fa fa-fw fa-upload"></i>Download</span></a></span>
+                        <span style={{color: "white"}}>Download Sample Format File <a href="#"><span style={{color: "rgb(60, 141, 188)"}}><i className="fa fa-fw fa-upload"></i>Download</span></a></span>
                     </div>
                     <div className="row" style={{padding: "4px", justifyContent: "center"}}>
-                        <span>Select .xls file</span>   
-                        <div><input type="file" accept=".xls"/></div>
+                        <span style={{color: "white"}}>Select .xls file</span>   
+                        <div><input type="file" accept=".xls" style={{color: "white"}}/></div>
                     </div>
                     <div className="row" style={{padding: "4px", justifyContent: "center"}}>
-                        <div><Button type="primary" ><i className="fa fa-fw fa-upload"/>Import</Button></div>
+                        <div><Button type="primary" className="form-btn" ><i className="fa fa-fw fa-upload"/>Import</Button></div>
                     </div>
                 </div>
             </div>

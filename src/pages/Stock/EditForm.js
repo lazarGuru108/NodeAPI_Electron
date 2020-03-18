@@ -43,20 +43,20 @@ class EditForm extends React.Component {
         let addedTransfer = this.state.addedTransfer;
         let stockList = this.state.stockList;
         stockList.map((item, key) => {
-            if(item.transferQty) addedTransfer = true;
+            if (item.transferQty) addedTransfer = true;
             stockList[key].transferQty = 0;
         });
-        this.setState({ formData: { ...props.initData },stockList: stockList, stockListTmp: this.state.stockList, addedTransfer: addedTransfer });
+        this.setState({ formData: { ...props.initData }, stockList: stockList, stockListTmp: this.state.stockList, addedTransfer: addedTransfer });
     }
 
     componentDidMount() {
         let addedTransfer = this.state.addedTransfer;
         let stockList = this.state.stockList;
         stockList.map((item, key) => {
-            if(item.transferQty) addedTransfer = true;
+            if (item.transferQty) addedTransfer = true;
             stockList[key].transferQty = 0;
         });
-        this.setState({ formData: { ...this.props.initData },stockList: stockList, stockListTmp: this.state.stockList, addedTransfer: addedTransfer });
+        this.setState({ formData: { ...this.props.initData }, stockList: stockList, stockListTmp: this.state.stockList, addedTransfer: addedTransfer });
     }
 
     changeName = (e) => {
@@ -82,19 +82,19 @@ class EditForm extends React.Component {
         stockList.map((item, key) => {
             item.itemName.toLowerCase().indexOf(val.toLowerCase()) > -1 && stockListTmp.push(item);
         })
-        this.setState({searchStock: val, stockListTmp: stockListTmp });
+        this.setState({ searchStock: val, stockListTmp: stockListTmp });
     }
 
     changeQty = (e, key) => {
         let stockList = this.state.stockList;
         stockList[key].transferQty = e.target.value;
-        this.setState({stockList: stockList});
+        this.setState({ stockList: stockList });
     }
 
     onDeleteItem = (e, key) => {
         let stockList = this.state.stockList;
         stockList[key].transferQty = 0;
-        this.setState({stockList: stockList});
+        this.setState({ stockList: stockList });
     }
 
     handleSearchStore = (e) => {
@@ -237,7 +237,7 @@ class EditForm extends React.Component {
                         </div>
                         <div style={{ display: "flex", padding: "15px 5px" }}>
                             <div className="col-md-6 col-12 col-sm-12 left">
-                                <h5><i>Stock List</i></h5>
+                                <h5 style={{ color: "#fff" }}><i>Stock List</i></h5>
                                 <input type="text" className="form-control" name="searchStock" onChange={(e) => this.changeSearchStock(e)}
                                     placeholder="Search" name="searchStock" required value={searchStock || ''} />
                                 <div className="search-list-container">
@@ -245,7 +245,7 @@ class EditForm extends React.Component {
                                         {
                                             stockListTmp.map((item, key) => (
                                                 <div key={key} className="stock-item" onClick={(e) => this.onClickStockItem(e, item, key)}>
-                                                    <label>
+                                                    <label style={{color: '#555'}}>
                                                         -- {item.itemName},InvoiceId:{item.invoiceId},Stock:
                                                         <span className="badge badge-info">{item.badgeNum}</span>
                                                     </label>
@@ -256,7 +256,7 @@ class EditForm extends React.Component {
                                 </div>
                             </div>
                             <div className="col-md-6 col-12 col-sm-12 right">
-                                <h5><i>Transfer List</i></h5>
+                                <h5 style={{ color: "#fff" }}><i>Transfer List</i></h5>
                                 {/* <input type="text" className="form-control" name="refNo" onChange={(e) => this.handleFieldChange(e, 'refNo')}
                                         placeholder="Search" name="refNo" required value={refNo || ''} />*/}
                                 <div className="transfer-list-container">
@@ -270,30 +270,30 @@ class EditForm extends React.Component {
                                             </tr>
                                         </thead>
                                     </Table>
-                                    {addedTransfer && 
-                                    <Table responsive="md" striped bordered hover>
-                                        <tbody>
-                                            {
-                                                stockList.map((item, key) => (
-                                                    item.transferQty ?
-                                                    <tr key={key}>
-                                                        <td className="w-45 transfer-list">{item.itemName}</td>
-                                                        <td className="w-25 transfer-list">{item.invoiceId}</td>
-                                                        <td className="w-25 transfer-list">
-                                                            <input type="text" style={{ width: "100%" }} value={item.transferQty} name="transferQty" 
-                                                                onChange={(e) => { this.changeQty(e, key) }} 
-                                                            />
-                                                        </td>
-                                                        <td className="w-5 transfer-list">
-                                                            <span className="fa fa-close pointer" style={{color: "red"}} onClick={(e) => this.onDeleteItem(e, key)}/>
-                                                        </td>
-                                                    </tr>
-                                                    :
-                                                    null
-                                                ))
-                                            }
-                                        </tbody>
-                                    </Table>
+                                    {addedTransfer &&
+                                        <Table responsive="md" striped bordered hover>
+                                            <tbody>
+                                                {
+                                                    stockList.map((item, key) => (
+                                                        item.transferQty ?
+                                                            <tr key={key}>
+                                                                <td className="w-45 transfer-list">{item.itemName}</td>
+                                                                <td className="w-25 transfer-list">{item.invoiceId}</td>
+                                                                <td className="w-25 transfer-list">
+                                                                    <input type="text" style={{ width: "100%" }} value={item.transferQty} name="transferQty"
+                                                                        onChange={(e) => { this.changeQty(e, key) }}
+                                                                    />
+                                                                </td>
+                                                                <td className="w-5 transfer-list">
+                                                                    <span className="fa fa-close pointer" style={{ color: "red" }} onClick={(e) => this.onDeleteItem(e, key)} />
+                                                                </td>
+                                                            </tr>
+                                                            :
+                                                            null
+                                                    ))
+                                                }
+                                            </tbody>
+                                        </Table>
                                     }
                                 </div>
                             </div>
@@ -306,8 +306,8 @@ class EditForm extends React.Component {
                                     padding: "0 0 15px 0px", display: "flex",
                                     justifyContent: "center"
                                 }}>
-                                    <Button type="primary" onClick={this.saveHandler}><span className="fa fa-fw fa-car"></span>Transfer Now</Button>&nbsp;&nbsp;&nbsp;
-                                        <Button type="primary" onClick={this.resetHandler} style={{ background: "#E08E0B" }}><span className="fa fa-fw fa-circle-o"></span>Reset</Button>
+                                    <Button type="primary" className="form-btn" onClick={this.saveHandler}><span className="fa fa-fw fa-car"></span>Transfer Now</Button>&nbsp;&nbsp;&nbsp;
+                                    <Button type="primary" className="form-btn" onClick={this.resetHandler} style={{ background: "#E08E0B" }}><span className="fa fa-fw fa-circle-o"></span>Reset</Button>
                                 </div>
                                 <div className="col-2"></div>
                             </div>

@@ -120,7 +120,7 @@ class PrinterTab extends React.Component {
                                                         <label className="form-check-label" >
                                                             <input type="checkbox" className="form-check-input" required checked={isSelected}
                                                                 name="printers" onChange={(e) => { this.handleFieldChange(e, 'printers', s) }}
-                                                            /><span>{s}</span>
+                                                            /><span style={{color: "#555"}}>{s}</span>
                                                         </label>
                                                     </div>
                                                 )

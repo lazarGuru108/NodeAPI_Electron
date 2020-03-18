@@ -122,3 +122,71 @@
     }
   
 }
+.piechartContainer {
+  transform: scale(1);
+}
+.barchart-container {
+  transform: scale(1);
+}
+.col-chart {
+  transform: scale(1);
+}
+@media(max-width: 1400px) {
+  .piechartContainer {
+    transform: scale(0.7);
+  }
+  .barchart-container {
+    transform: scale(0.7);
+  }
+  .col-chart {
+    transform: scale(0.6);
+  }
+}
+
+@media(max-width: 1280px) {
+  .piechartContainer {
+    transform: scale(0.6);
+  }
+  .barchart-container {
+    transform: scale(0.6,1);
+  }
+  .col-chart {
+    transform: scale(0.5,1);
+  }
+}
+
+@media(max-width: 1024px) {
+  .piechartContainer {
+    transform: scale(0.5);
+  }
+  .barchart-container {
+    transform: scale(0.5,1);
+  }
+  .col-chart {
+    transform: scale(0.4,1);
+  }
+}
+
+@media(max-width: 720px) {
+  .piechartContainer {
+    transform: scale(0.8, 0.8);
+  }
+  .barchart-container {
+    transform: scale(0.4,1);
+  }
+  .col-chart {
+    transform: scale(0.3,1);
+  }
+}
+
+@media(max-width: 450px) {
+  .piechartContainer {
+    transform: scale(1);
+  }
+  .barchart-container {
+    transform: scale(0.3,1);
+  }
+  .col-chart {
+    transform: scale(0.2,1);
+  }
+}

@@ -287,8 +287,8 @@ class EditForm extends React.Component {
                                     <div className="col-2"></div>
                                     <div className="col-8 bottomright" style={{padding: "0 0 15px 0px", display: "flex",
                                     justifyContent: "center"}}>
-                                        <Button type="primary" onClick={this.saveHandler}><i className="fa fa-fw fa-save"></i>Save</Button>&nbsp;&nbsp;&nbsp;
-                                        <Button type="primary" onClick={this.resetHandler}><span className="fa fa-fw fa-circle-o"></span>Reset</Button>
+                                        <Button type="primary" className="form-btn" onClick={this.saveHandler}><i className="fa fa-fw fa-save"></i>Save</Button>&nbsp;&nbsp;&nbsp;
+                                        <Button type="primary" className="form-btn" onClick={this.resetHandler}><span className="fa fa-fw fa-circle-o"></span>Reset</Button>
                                     </div>
                                     <div className="col-2"></div>
                                 </div>

@@ -63,7 +63,7 @@ class AddRole extends React.Component {
                 {
                     initData.fields.map((item, key) => (
                         <div key={key}>
-                            <h3>{item.field_name}</h3>
+                            <h3 style={{color: "white"}}>{item.field_name}</h3>
                             <Table responsive striped bordered hover>
                                 <thead>
                                     <tr>

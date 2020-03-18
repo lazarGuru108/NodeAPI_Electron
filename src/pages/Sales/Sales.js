@@ -46,6 +46,7 @@ class Sales extends React.Component {
     render() {
         let { openAddCustomer } = this.state;
         return (
+            // <div className="container-fluid">
             <div className="row" id="sales" style={{ height: '100%'}}>
                 <Dialog
                     open={openAddCustomer}
@@ -77,7 +78,7 @@ class Sales extends React.Component {
                         <Button onClick={() => this.handleClose()}>Add Customer</Button>
                     </DialogActions>
                 </Dialog>
-                <div className="col-6 col-sm-6 p-2 pr-1">
+                <div className="col-md-6 col-6 col-sm-6 p-2 pr-1">
                     <div className="left" style={{ background: 'rgb(240, 242, 245)', height: '100%' }}>
                         <div className="container" style={{ height: "100%" }}>
                             <div className="row">
@@ -174,7 +175,7 @@ class Sales extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="col-6 col-sm-6 p-2 pl-1">
+                <div className="col-md-6 col-6 col-sm-6 p-2 pl-1">
                     <div className="left" style={{ background: 'rgb(240, 242, 245)', height: '100%' }}>
                         <div className="container">
                             <div className="row">
@@ -203,6 +204,7 @@ class Sales extends React.Component {
                     </div>
                 </div>
             </div>
+            // </div>
         );
     }
 }

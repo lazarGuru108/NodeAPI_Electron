@@ -249,7 +249,7 @@ class EditForm extends React.Component {
                                                             <input type="checkbox" className="form-check-input" required checked={isSelected}
                                                                 name="stores" onChange={(e) => { this.handleFieldChange(e, 'stores', s) }}
 
-                                                            /><span>{s}</span>
+                                                            /><span style={{color:"#555"}}>{s}</span>
                                                         </label>
                                                     </div>
                                                 )
@@ -300,8 +300,6 @@ class EditForm extends React.Component {
                                         value={order || ''}
                                         name="order" onChange={(e) => { this.handleFieldChange(e, 'order') }} />
                                 </div>
-                                <div className="valid-feedback">Valid.</div>
-                                <div className="invalid-feedback">Please fill out this field.</div>
                             </div>
                         </div>
                         <div className="form-group">
@@ -310,13 +308,11 @@ class EditForm extends React.Component {
                                     {/* <label htmlFor="uname">Order <i className="required">*</i></label> */}
                                 </div>
                                 <div className="col-12 col-md-1 col-sm-12">
-                                    <Button type="primary" onClick={this.saveHandler}><Icon type="save" />Save</Button>
+                                    <Button type="primary" className="form-btn" onClick={this.saveHandler}><Icon type="save" />Save</Button>
                                 </div>
                                 <div className="col-12 col-md-1 col-sm-12">
-                                    <Button type="primary" onClick={this.resetHandler}><Icon type="sync" />Reset</Button>
+                                    <Button type="primary" className="form-btn" onClick={this.resetHandler}><Icon type="sync" />Reset</Button>
                                 </div>
-                                <div className="valid-feedback">Valid.</div>
-                                <div className="invalid-feedback">Please fill out this field.</div>
                             </div>
                         </div>
                     </form>

@@ -147,6 +147,9 @@ input.form-control {
   background: url("../images/background.jpg")no-repeat center center fixed;
 } */
 
+/***
+  Transparent Styles Start
+*/
 .ant-layout {
   background: url("../images/background.jpg")no-repeat center center fixed!important;
 }
@@ -155,6 +158,50 @@ input.form-control {
   background-color: #fafafa63!important;
 }
 
+.form-control {
+  border-radius: 15px;
+}
+.ant-select-selection--single {
+  border-radius: 20px !important;
+  padding-left: 10px;
+}
+
+::placeholder {
+  opacity: 0.5!important;
+}
+
+.ant-collapse-content {
+  background-color: #00000000!important;
+}
+.ant-collapse-content-box {
+  background-color: #00000088;
+}
+.ant-table-tbody {
+  background-color: #fafafa;
+}
+label {
+  color: #fff
+}
+.ant-tabs-tab {
+  color: white
+}
+.ant-input {
+  border-radius: 15px!important;
+}
+table {
+  background-color: #fafafa;
+}
+.form-btn {
+  border-radius: 15px!important;
+}
+/***
+  Transparent Styles End
+*/
+
+
+/* .ant-tabs-tab:active {
+  color: 'red'
+} */
 //For Print to PDF ( only text content )
 .print-source {
   display: none;

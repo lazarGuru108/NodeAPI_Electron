@@ -438,7 +438,7 @@ class GneralTab extends React.Component {
                                         <div className="form-group">
                                             <div className="row">
                                                 <div className="col-sm-6">
-                                                    <label htmlFor="receipt_printer" className="control-label">
+                                                    <label htmlFor="receipt_printer" className="control-label" style={{color:"#555"}}>
                                                         Receipt Printer
                                                 </label>
                                                     <div>
@@ -459,7 +459,7 @@ class GneralTab extends React.Component {
                                                     </div>
                                                 </div>
                                                 <div className="col-sm-6">
-                                                    <label htmlFor="auto_print_receipt" className="control-label">
+                                                    <label htmlFor="auto_print_receipt" className="control-label" style={{color:"#555"}}>
                                                         Auto Print Receipt
                                                 </label>
                                                     <div>
@@ -611,7 +611,7 @@ class GneralTab extends React.Component {
                                                         <label className="form-check-label" >
                                                             <input type="checkbox" className="form-check-input" required checked={isSelected}
                                                                 name="currencys" onChange={(e) => { this.handleFieldChange(e, 'currencys', s) }}
-                                                            /><span>{s}</span>
+                                                            /><span style={{color:"#555"}}>{s}</span>
                                                         </label>
                                                     </div>
                                                 )
@@ -650,7 +650,7 @@ class GneralTab extends React.Component {
                                                         <label className="form-check-label" >
                                                             <input type="checkbox" className="form-check-input" required checked={isSelected}
                                                                 name="paymethod" onChange={(e) => { this.handleFieldChange(e, 'paymethod', s) }}
-                                                            /><span>{s}</span>
+                                                            /><span style={{color:"#555"}}>{s}</span>
                                                         </label>
                                                     </div>
                                                 )
@@ -669,10 +669,10 @@ class GneralTab extends React.Component {
                                     {/* <label htmlFor="uname">Order <i className="required">*</i></label> */}
                                 </div>
                                 <div className="col-12 col-md-1 col-sm-12">
-                                    <Button type="primary" onClick={this.saveHandler}><Icon type="save" />Save</Button>
+                                    <Button type="primary" className="form-btn" onClick={this.saveHandler}><Icon type="save" />Save</Button>
                                 </div>
                                 <div className="col-12 col-md-1 col-sm-12">
-                                    <Button type="primary" onClick={this.resetHandler}><Icon type="sync" />Reset</Button>
+                                    <Button type="primary" className="form-btn" onClick={this.resetHandler}><Icon type="sync" />Reset</Button>
                                 </div>
                                 <div className="valid-feedback">Valid.</div>
                                 <div className="invalid-feedback">Please fill out this field.</div>
