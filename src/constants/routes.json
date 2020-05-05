@@ -13,6 +13,7 @@
     "STOCKTRANSFER": "/stocktransfer",
     "SENDEMAIL": "/sendemail",
     "APPOINTMENT": "/appointment",
-    "MANAGEROLE": "/manage_role"
+    "MANAGEROLE": "/manage_role",
+    "CUSTOMER": "/customer"
   }
   

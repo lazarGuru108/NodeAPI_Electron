@@ -27,6 +27,7 @@ import SendEmail from './pages/SendEmail/SendEmail.js';
 import Appointment from './pages/Appointment/Appointment.js';
 import '../src/assets/styles/main.scss';
 import ManageRole from './pages/ManageRole/ManageRole.js';
+import ManageCustomer from './pages/Customer/ManageCustomer/ManageCustomer';
 
 const { Sider, Content } = Layout;
 
@@ -145,6 +146,7 @@ class AppNavigator extends React.Component {
                 <Route path={routes.SENDEMAIL} exact component={SendEmail} />
                 <Route path={routes.APPOINTMENT} exact component={Appointment} />
                 <Route path={routes.MANAGEROLE} exact component={ManageRole} />
+                <Route path={routes.CUSTOMER} exact component={ManageCustomer} />
               </Content>
               <MainFooter />
             </Layout>

@@ -1,0 +1,61 @@
+{
+    "tables": [
+        {
+            "key": 0,
+            "id": 1,
+            "uname": "user1",
+            "email" : "user1@gmail.com", 
+            "phone": "1231231231", 
+            "gtin": "gtin1",
+            "address": "address1",
+            "city": "city1",
+            "state": "state1",
+            "country": "count1",
+            "storeSelect": true,
+            "stores": ["store 1", "store 2"],
+            "detail": "detail 1",
+            "status": "Active",
+            "order": 4,
+            "balance": "0.00",
+            "sex": "Male"
+        },
+        {
+            "key": 1,
+            "id": 2,
+            "uname": "user2",
+            "email" : "user2@gmail.com", 
+            "phone": "12312232131231", 
+            "gtin": "gtin2",
+            "address": "address2",
+            "city": "city2",
+            "state": "state2",
+            "country": "count2",
+            "storeSelect": true,
+            "stores": ["store 3", "store 2"],
+            "detail": "detail 2",
+            "status": "Active",
+            "order": 2,
+            "balance": "0.00",
+            "sex": "Female"
+        },
+        {
+            "key": 2,
+            "id": 3,
+            "uname": "user3",
+            "email" : "user3@gmail.com", 
+            "phone": "12312231231231", 
+            "gtin": "gtin3",
+            "address": "address3",
+            "city": "city3",
+            "state": "state3",
+            "country": "count3",
+            "storeSelect": false,
+            "stores": ["store 4", "store 2"],
+            "detail": "detail 3",
+            "status": "Inactive",
+            "order": 3,
+            "balance": "0.00",
+            "sex": "Male"
+        }
+    ]
+}

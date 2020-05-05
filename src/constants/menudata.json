@@ -20,6 +20,18 @@
             ]
         },
         {
+            "title": "Customer",
+            "hasChild": true,
+            "icon": "customer-service",
+            "children": [
+                {
+                    "title": "Customer",
+                    "url": "CUSTOMER",
+                    "icon": "shopping"
+                }
+            ]
+        },
+        {
             "title": "Send Email", 
             "hasChild": true,
             "icon": "mail",
