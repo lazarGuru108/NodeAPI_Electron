@@ -93,7 +93,7 @@
     "emailjs-com": "^2.4.1",
     "file-saver": "^2.0.2",
     "jodit-react": "^1.0.42",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "jspdf-autotable": "^3.2.13",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
